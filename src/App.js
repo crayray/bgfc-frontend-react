@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Login from "./containers/LoginContainer"
+import SignInSide from './components/SignIn';
 
 
 class App extends React.Component {
@@ -40,7 +40,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Login />
+        <SignInSide/>
         {/* <Button type="primary">Button</Button> */}
         {/* <img src={`http://localhost:4000/${this.state.avatar}`}/> */}
       </div>
