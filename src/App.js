@@ -1,13 +1,13 @@
-import React from 'react';
-import './App.css';
-import SignInSide from './components/SignIn';
-
+import React from "react";
+import "./App.css";
+import SignInSide from "./components/SignIn";
+import HomepageLayout from "./containers/HomepageLayout";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { createBrowserHistory } from "history";
+// import DesktopContainer from './components/NavBar'
 
 class App extends React.Component {
-
-  
-
-  componentDidMount(){
+  componentDidMount() {
     // fetch('http://localhost:4000/profiles/1', {
     //   method: 'GET',
     //   headers: {
@@ -35,18 +35,34 @@ class App extends React.Component {
       .then(r => r.json())
       .then(console.log);
   }
-  
 
   render() {
+    var hist = createBrowserHistory();
     return (
-      <div>
-        <SignInSide/>
-        {/* <Button type="primary">Button</Button> */}
-        {/* <img src={`http://localhost:4000/${this.state.avatar}`}/> */}
-      </div>
-    )
+     
+      // <div>
+      // <HomepageLayout/>
+      // {/* <DesktopContainer/> */}
+      //   <SignInSide/>
+      //   {/* <Button type="primary">Button</Button> */}
+      //   {/* <img src={`http://localhost:4000/${this.state.avatar}`}/> */}
+      // </div>
+      <Router history={hist}>
+        <Switch>
+          <Route exact path="/" component={HomepageLayout} />
+          <Route exact path="/about" component={SignInSide} />
+          <Route exact path="/restaurants" component={SignInSide} />
+          <Route exact path="/events" component={SignInSide} />
+          <Route exact path="/members" component={SignInSide} />
+          <Route exact path="/login" component={SignInSide} />
+          <Route exact path="/signup" component={SignInSide} />
+          {/* <Route path="/profile-page" component={ProfilePage} /> */}
+          {/* <Route path="/login-page" component={LoginPage} /> */}
+          {/* <Route path="/" component={Components} /> */}
+        </Switch>
+      </Router>
+    );
   }
-  
 }
 
 export default App;
