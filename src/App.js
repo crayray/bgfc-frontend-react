@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Login from "./LoginContainer"
+import Login from "./containers/LoginContainer"
+
 
 class App extends React.Component {
 
@@ -41,6 +42,7 @@ class App extends React.Component {
     return (
       <div>
         <Login />
+        {/* <Button type="primary">Button</Button> */}
         {/* <img src={`http://localhost:4000/${this.state.avatar}`}/> */}
       </div>
     )
