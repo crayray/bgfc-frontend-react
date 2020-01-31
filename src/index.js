@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'semantic-ui-css/semantic.min.css'
+// import 'ant-design-pro/dist/ant-design-pro.css';
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
