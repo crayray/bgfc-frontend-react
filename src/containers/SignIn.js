@@ -117,7 +117,6 @@ export default function SignInSide() {
               </Grid>
               <Grid item>
               <NavLink variant="body2" to="/signup">Don't have an account? Sign Up</NavLink>
-      
               </Grid>
             </Grid>
             <Box mt={5}>

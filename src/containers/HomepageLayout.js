@@ -16,6 +16,7 @@ import {
   Sidebar,
   Visibility
 } from "semantic-ui-react";
+import { Carousel } from 'grommet';
 
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
@@ -110,7 +111,7 @@ class DesktopContainer extends Component {
                 </Menu.Item>
                 <Menu.Item position="right">
                   <Button as="a" inverted={!fixed}>
-                  <NavLink to="/events">Events</NavLink>
+                    <NavLink to="/events">Events</NavLink>
                   </Button>
                   <Button
                     as="a"
@@ -224,37 +225,15 @@ const HomepageLayout = () => (
     <Segment style={{ padding: "8em 0em" }} vertical>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
-          <Grid.Column width={8}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              We Help Companies and Companions
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              We can give your company superpowers to do things that they never
-              thought possible. Let us delight your customers and empower your
-              needs... through pure data analytics.
-            </p>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              We Make Bananas That Can Dance
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              Yes that's right, you thought it was the stuff of dreams, but even
-              bananas can be bioengineered.
-            </p>
-          </Grid.Column>
-          <Grid.Column floated="right" width={6}>
-            <Image
-              bordered
-              rounded
-              size="large"
-              src="/images/wireframe/white-image.png"
-            />
-          </Grid.Column>
+      
+        <Carousel play={5000}>
+          <Image src='//v2.grommet.io/assets/Wilderpeople_Ricky.jpg' />
+          <Image src='//v2.grommet.io/assets/IMG_4245.jpg' />
+          <Image src='//v2.grommet.io/assets/IMG_4210.jpg' />
+        </Carousel>
+     
         </Grid.Row>
-        <Grid.Row>
-          <Grid.Column textAlign="center">
-            <Button size="huge">Check Them Out</Button>
-          </Grid.Column>
-        </Grid.Row>
+        <Grid.Row></Grid.Row>
       </Grid>
     </Segment>
 
