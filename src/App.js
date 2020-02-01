@@ -49,19 +49,17 @@ class App extends React.Component {
       {jwt: window.localStorage}
     )
   }
+  
 
   render() {
     var hist = createBrowserHistory();
      
     return (
-     
-      // <div>
       // <HomepageLayout/>
       // {/* <DesktopContainer/> */}
       //   <SignInSide/>
       //   {/* <Button type="primary">Button</Button> */}
       //   {/* <img src={`http://localhost:4000/${this.state.avatar}`}/> */}
-      // </div>
       <Router history={hist}>
         <Switch>
           <Route exact path="/" component={HomepageLayout} />
