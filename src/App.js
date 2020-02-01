@@ -9,6 +9,7 @@ import RestaurantsLayout from "./containers/RestaurantsLayout"
 import SignUp from "./containers/SignUp"
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import isEmpty  from 'react-lodash'
 // import DesktopContainer from './components/NavBar'
 
 class App extends React.Component {
@@ -43,6 +44,7 @@ class App extends React.Component {
 
   render() {
     var hist = createBrowserHistory();
+    var myStorage = window.localStorage;
     return (
      
       // <div>
@@ -59,14 +61,14 @@ class App extends React.Component {
           <Route exact path="/restaurants" component={RestaurantsLayout} />
           <Route exact path="/events" component={EventsLayout} />
           <Route exact path="/members" component={MembersLayout} />
-          {/* <Route path="/members" render={() => (
-            getSession() ? (
+          <Route path="/members" render={() => (
+            (isEmpty(myStorage)) ? (
               <MembersLayout to="/members" />
             ) : (
               <Redirect to="/login" />
             )
             
-          )} /> */}
+          )} />
           <Route exact path="/login" component={SignInSide} />
           <Route exact path="/signup" component={SignUp} />
         </Switch>
