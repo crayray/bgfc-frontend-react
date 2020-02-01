@@ -47,10 +47,32 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+
 export default function SignUp() {
   const classes = useStyles();
-  const [username, setUsername] = useState(0);
-  const [email, setEmail] = useState(0);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleSubmit = event => {
+    event.preventDefault();
+    // console.log("this works")
+    fetch("http://localhost:4000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          user: {
+            username: `${username}`,
+            password: `${password}`,
+            email: `${email}`
+          }
+        })
+      })
+        .then(r => r.json())
+        .then(console.log);
+    }
 
 
   return (
@@ -63,17 +85,17 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={event => handleSubmit(event)}>
           <Grid container spacing={2}>
             <Grid item xs={12} >
               <TextField
-                autoComplete="fname"
                 name="userName"
                 variant="outlined"
                 required
                 fullWidth
                 id="userName"
                 label="Username"
+                onChange={(e) => setUsername(e.target.value)}
                 autoFocus
               />
             </Grid>
@@ -84,8 +106,8 @@ export default function SignUp() {
                 fullWidth
                 id="email"
                 label="Email Address"
+                onChange={(e) => setEmail(e.target.value)}
                 name="email"
-                autoComplete="email"
               />
             </Grid>
             <Grid item xs={12}>
@@ -97,13 +119,7 @@ export default function SignUp() {
                 label="Password"
                 type="password"
                 id="password"
-                autoComplete="current-password"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
+                onChange={(e) => setPassword(e.target.value)}
               />
             </Grid>
           </Grid>
@@ -113,6 +129,7 @@ export default function SignUp() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            
           >
             Sign Up
           </Button>

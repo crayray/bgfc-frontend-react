@@ -23,22 +23,22 @@ class App extends React.Component {
     // .then(response => response.json())
     // .then(data => this.setState({profile: data.profile, avatar: data.avatar}))
 
-    fetch("http://localhost:4000/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: JSON.stringify({
-        user: {
-          username: "lisa2",
-          password: "hi",
-          email: "b@gmail.com"
-        }
-      })
-    })
-      .then(r => r.json())
-      .then(console.log);
+    // fetch("http://localhost:4000/users", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Accept: "application/json"
+    //   },
+    //   body: JSON.stringify({
+    //     user: {
+    //       username: "lisa2",
+    //       password: "hi",
+    //       email: "b@gmail.com"
+    //     }
+    //   })
+    // })
+    //   .then(r => r.json())
+    //   .then(console.log);
   }
 
   render() {
