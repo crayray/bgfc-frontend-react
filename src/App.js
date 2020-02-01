@@ -7,7 +7,7 @@ import MembersLayout from "./containers/MembersLayout"
 import EventsLayout from "./containers/EventsLayout"
 import RestaurantsLayout from "./containers/RestaurantsLayout"
 import SignUp from "./containers/SignUp"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
 // import DesktopContainer from './components/NavBar'
 
@@ -59,6 +59,14 @@ class App extends React.Component {
           <Route exact path="/restaurants" component={RestaurantsLayout} />
           <Route exact path="/events" component={EventsLayout} />
           <Route exact path="/members" component={MembersLayout} />
+          {/* <Route path="/members" render={() => (
+            getSession() ? (
+              <MembersLayout to="/members" />
+            ) : (
+              <Redirect to="/login" />
+            )
+            
+          )} /> */}
           <Route exact path="/login" component={SignInSide} />
           <Route exact path="/signup" component={SignUp} />
         </Switch>
