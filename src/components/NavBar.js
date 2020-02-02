@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import {
   Button,
   Container,
@@ -38,18 +38,19 @@ class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
-          <Segment
+          {/* <Segment
             inverted
             textAlign="center"
             // style={{ minHeight: 700, padding: "1em 0em" }}
             vertical
-          >
+          > */}
             <Menu
               fixed={fixed ? "top" : null}
               inverted={!fixed}
               pointing={!fixed}
               secondary={!fixed}
-              size="large"
+              size="massive"
+              style={{backgroundColor: "#222220",opacity: .75, marginBottom: 0, paddingBottom: ".5em" }}
             >
               <Container>
                 <Menu.Item as="a" active>
@@ -78,7 +79,7 @@ class DesktopContainer extends Component {
               </Container>
             </Menu>
             
-          </Segment>
+          {/* </Segment> */}
         </Visibility>
 
         {children}
@@ -115,6 +116,7 @@ class MobileContainer extends Component {
           onHide={this.handleSidebarHide}
           vertical
           visible={sidebarOpened}
+          style={{backgroundColor: "#E19226"}}
         >
           <Menu.Item as="a" active>
             {" "}
@@ -138,11 +140,12 @@ class MobileContainer extends Component {
           <Segment
             inverted
             textAlign="center"
-            style={{ minHeight: 200, padding: "1em 0em" }}
+            // style={{ minHeight: 200, padding: "1em 0em" }}
             vertical
+            style={{ minHeight: 200, padding: "1em 0em",backgroundColor: "#E19226",opacity: .75 }}
           >
-            <Container>
-              <Menu inverted pointing secondary size="large">
+            <Container >
+              <Menu style={{border: "none"}} inverted pointing secondary size="large">
                 <Menu.Item onClick={this.handleToggle}>
                   <Icon name="sidebar" />
                 </Menu.Item>

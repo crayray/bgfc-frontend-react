@@ -92,7 +92,7 @@ class DesktopContainer extends Component {
               pointing={!fixed}
               secondary={!fixed}
               size="massive"
-              style={{backgroundColor: "#222220",opacity: .75, marginBottom: 0 }}
+              style={{backgroundColor: "#222220",opacity: .75, paddingBottom: ".5em", marginBottom: 0 }}
             >
               <Container>
                 <Menu.Item as="a" active>
