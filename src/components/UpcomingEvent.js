@@ -2,14 +2,18 @@ import React from "react";
 import { Button, Card, Image } from "semantic-ui-react";
 import { defaultProps } from "grommet";
 
-export default function UpcomingEvent({imageName}) {
+export default function UpcomingEvent({ imageName }) {
   return (
-    <Card>
+    <Card
+    //  href='http://localhost:3000/login'
+    // color="teal"
+    >
+    
       <Card.Content>
         <Image
           floated="center"
           // size="mini"
-          src= {imageName}
+          src={imageName}
         />
         {/* <Card.Header>Steve Sanders</Card.Header>
         <Card.Meta>Friends of Elliot</Card.Meta> */}
