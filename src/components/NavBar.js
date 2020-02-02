@@ -5,6 +5,7 @@ import {
   Button,
   Container,
   Icon,
+  Image,
   Menu,
   Responsive,
   Segment,
@@ -137,7 +138,7 @@ class MobileContainer extends Component {
           <Segment
             inverted
             textAlign="center"
-            style={{ minHeight: 350, padding: "1em 0em" }}
+            style={{ minHeight: 200, padding: "1em 0em" }}
             vertical
           >
             <Container>
@@ -147,7 +148,6 @@ class MobileContainer extends Component {
                 </Menu.Item>
               </Menu>
             </Container>
-            {/* <HomepageHeading mobile /> */}
           </Segment>
 
           {children}
@@ -172,9 +172,9 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node
 };
 
-const NavBar2 = () => (
+const NavBar = () => (
     <ResponsiveContainer />
 )
 
 
-export default NavBar2;
+export default NavBar;
