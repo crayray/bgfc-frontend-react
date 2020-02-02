@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import "../stylesheets/HomePageLayout.css"
 import {
   Button,
   Container,
@@ -85,23 +86,18 @@ class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
-          <Segment
-            inverted
-            textAlign="center"
-            style={{ minHeight: 700, padding: "1em 0em" }}
-            vertical
-          >
-            <Menu
+           <Menu
               fixed={fixed ? "top" : null}
               inverted={!fixed}
               pointing={!fixed}
               secondary={!fixed}
-              size="large"
+              size="massive"
+              style={{backgroundColor: "#222220",opacity: .75, marginBottom: 0 }}
             >
               <Container>
                 <Menu.Item as="a" active>
                   {" "}
-                  <NavLink to="/">Home</NavLink>
+                  <NavLink  to="/" ><Link style={{textDecoration: "none"}}>Home</Link></NavLink>
                 </Menu.Item>
                 <Menu.Item as="a">
                   <NavLink to="/about">About</NavLink>
@@ -117,13 +113,19 @@ class DesktopContainer extends Component {
                     as="a"
                     inverted={!fixed}
                     primary={fixed}
-                    style={{ marginLeft: "0.5em" }}
+                    style={{ textDecoration: "none", marginLeft: "0.5em" }}
                   >
                     <NavLink to="/members">Members</NavLink>
                   </Button>
                 </Menu.Item>
               </Container>
             </Menu>
+          <Segment
+            inverted
+            textAlign="center"
+            style={{ backgroundColor: "#E19226", minHeight: 700}}
+            vertical
+          >
             <HomepageHeading />
           </Segment>
         </Visibility>
