@@ -164,6 +164,8 @@ class MobileContainer extends Component {
           onHide={this.handleSidebarHide}
           vertical
           visible={sidebarOpened}
+          style={{ minHeight: 350, padding: "1em 0em",backgroundColor: "#E19226",opacity: .75 }}
+          
         >
           <Menu.Item as="a" active>
             {" "}
@@ -187,11 +189,11 @@ class MobileContainer extends Component {
           <Segment
             inverted
             textAlign="center"
-            style={{ minHeight: 350, padding: "1em 0em" }}
+            style={{ minHeight: 350, padding: "1em 0em",backgroundColor: "#E19226",opacity: .75 }}
             vertical
           >
             <Container>
-              <Menu inverted pointing secondary size="large">
+              <Menu style={{border: "none"}}inverted pointing secondary size="large">
                 <Menu.Item onClick={this.handleToggle}>
                   <Icon name="sidebar" />
                 </Menu.Item>
