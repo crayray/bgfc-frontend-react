@@ -1,9 +1,25 @@
-import React from 'react'
 
-export default function EventsLayout() {
-    return (
-        <div style= {{backgroundColor: "teal"}}>
-            <h1>Hello from Events</h1>
-        </div>
-    )
+
+// export default function EventsLayout() {
+//     return (
+//            <UpcomingEvent />
+        
+//     )
+// }
+import React, { Component } from 'react'
+import UpcomingEvent from "../components/UpcomingEvent"
+import { Container, Segment } from "semantic-ui-react"
+import NavBar2 from "../components/NavBar2"
+
+export default class EventsLayout extends Component {
+    render() {
+        return (
+           <div>
+           <NavBar2 />
+            <Segment>
+               <UpcomingEvent />
+               </Segment>
+               </div>
+        )
+    }
 }
