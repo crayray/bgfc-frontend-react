@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import UpcomingEvent from "../components/UpcomingEvent"
 import { Container, Segment, Card, Grid } from "semantic-ui-react"
 import NavBar from "../components/NavBar"
+import {events} from "../data/events"
 
 export default class EventsLayout extends Component {
-
+    
 
     render() {
 
@@ -17,9 +18,12 @@ export default class EventsLayout extends Component {
       <Grid.Row>
             <Container centered>
             <Card.Group centered>
-            {eventImages.map(image => (
+            {events.map(event => (
                 <UpcomingEvent 
-                    imageName={image}
+                    image={event.image}
+                    name={event.name}
+                    blurb={event.blurb}
+                    id= {event.id}
                 />
             ))}
             </Card.Group>
