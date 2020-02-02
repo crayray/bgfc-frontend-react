@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "../stylesheets/HomePageLayout.css"
+
 import {
   Button,
   Container,
@@ -123,7 +124,7 @@ class DesktopContainer extends Component {
           <Segment
             inverted
             textAlign="center"
-            style={{ backgroundColor: "#E19226", minHeight: 700}}
+            style={{ backgroundColor: "#E19226", minHeight: 700, backgroundImage:  `url(${"http://localhost:3000/thank_you.png"})`, backgroundSize: 'cover'}}
             vertical
           >
             <HomepageHeading />
@@ -189,13 +190,13 @@ class MobileContainer extends Component {
           <Segment
             inverted
             textAlign="center"
-            style={{ minHeight: 350, padding: "1em 0em",backgroundColor: "#E19226",opacity: .75 }}
+            style={{ minHeight: 350, padding: "1em 0em",backgroundColor: "#E19226",opacity: .75,  backgroundImage:  `url(${"http://localhost:3000/thank_you.png"})`, backgroundSize: 'cover'}}
             vertical
           >
             <Container>
               <Menu style={{border: "none"}}inverted pointing secondary size="large">
-                <Menu.Item onClick={this.handleToggle}>
-                  <Icon name="sidebar" />
+                <Menu.Item onClick={this.handleToggle} style={{backgroundColor: "white", padding: "1em", borderRadius:"5px"}}>
+                  <Icon color='teal' name="sidebar"  />
                 </Menu.Item>
               </Menu>
             </Container>
