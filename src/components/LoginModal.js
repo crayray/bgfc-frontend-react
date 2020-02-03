@@ -23,7 +23,7 @@ const RsvpModal= () => (
       </Button>
     }
   >
-    <Modal.Header>Event Details HELLO FROM RSVP LAND!</Modal.Header>
+    <Modal.Header>Event Details</Modal.Header>
     <Modal.Content image>
       <Image wrapped size="small" src="http://localhost:3000/woman_logo.png" />
       <Modal.Description>
@@ -32,26 +32,17 @@ const RsvpModal= () => (
       </Modal.Description>
     </Modal.Content>
     <Modal.Actions>
-      <Link to="/signup">
-        <Button color="olive" icon labelPosition="left">
-          <Icon name="close" />
-          Signup
-        </Button>
-      </Link>
       <Link to="/login">
         <Button color="olive" icon labelPosition="right">
-          Login
+          RSVP for this event
           <Icon name="right chevron" />
         </Button>
       </Link>
     </Modal.Actions>
-    {/* <Modal.Actions>
-      <NestedModal />
-    </Modal.Actions> */}
   </Modal>
 );
 
-// export default LoginModal;
+
 
 const LoginModal= () => (
   <Modal

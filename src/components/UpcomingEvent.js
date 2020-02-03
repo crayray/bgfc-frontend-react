@@ -6,22 +6,18 @@ import LoginModal from "./LoginModal"
 export default function UpcomingEvent({ image, name, blurb, token}) {
   return (
     <Card
-    //  href='http://localhost:3000/login'
-    // color="teal"
     raised
     >
     
       <Card.Content>
         <Image
           floated="center"
-          // size="mini"
           src={image}
         />
        
       </Card.Content>
       <Card.Content extra>
          <Card.Header>{name}</Card.Header>
-        {/* <Card.Meta>Meta info about CC</Card.Meta> */}
         <Card.Description style={{marginBottom: ".75em"}}>
         {blurb}
         </Card.Description>
@@ -31,6 +27,7 @@ export default function UpcomingEvent({ image, name, blurb, token}) {
          
           <LoginModal
             token = {token}
+            
            />
         </div>
       </Card.Content>
