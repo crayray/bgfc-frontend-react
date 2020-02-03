@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
-import "../stylesheets/HomePageLayout.css"
+import "../stylesheets/HomePageLayout.css";
 
 import {
   Button,
@@ -18,7 +18,7 @@ import {
   Sidebar,
   Visibility
 } from "semantic-ui-react";
-import { Carousel } from 'grommet';
+import { Carousel } from "grommet";
 
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
@@ -87,44 +87,60 @@ class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
-           <Menu
-              fixed={fixed ? "top" : null}
-              inverted={!fixed}
-              pointing={!fixed}
-              secondary={!fixed}
-              size="massive"
-              style={{backgroundColor: "#222220",opacity: .75, paddingBottom: ".5em", marginBottom: 0 }}
-            >
-              <Container>
-                <Menu.Item as="a" active>
-                  {" "}
-                  <NavLink  to="/" ><Link style={{textDecoration: "none"}}>Home</Link></NavLink>
-                </Menu.Item>
-                <Menu.Item as="a">
-                  <NavLink to="/about">About</NavLink>
-                </Menu.Item>
-                <Menu.Item as="a">
-                  <NavLink to="/restaurants">Restaurants</NavLink>
-                </Menu.Item>
-                <Menu.Item position="right">
+          <Menu
+            fixed={fixed ? "top" : null}
+            inverted={!fixed}
+            pointing={!fixed}
+            secondary={!fixed}
+            size="massive"
+            style={{
+              backgroundColor: "#222220",
+              opacity: 0.75,
+              paddingBottom: ".5em",
+              marginBottom: 0
+            }}
+          >
+            <Container>
+              <Menu.Item as="a" active>
+                {" "}
+                <NavLink to="/">
+                  <Link style={{ textDecoration: "none" }}>Home</Link>
+                </NavLink>
+              </Menu.Item>
+              <Menu.Item as="a">
+                <NavLink to="/about">About</NavLink>
+              </Menu.Item>
+              <Menu.Item as="a">
+                <NavLink to="/restaurants">Restaurants</NavLink>
+              </Menu.Item>
+              <Menu.Item position="right">
+                <NavLink to="/events">
                   <Button as="a" inverted={!fixed}>
-                    <NavLink to="/events">Events</NavLink>
+                    Events
                   </Button>
+                </NavLink>
+                <NavLink to="/members">
                   <Button
                     as="a"
                     inverted={!fixed}
                     primary={fixed}
                     style={{ textDecoration: "none", marginLeft: "0.5em" }}
                   >
-                    <NavLink to="/members">Members</NavLink>
+                    Members
                   </Button>
-                </Menu.Item>
-              </Container>
-            </Menu>
+                </NavLink>
+              </Menu.Item>
+            </Container>
+          </Menu>
           <Segment
             inverted
             textAlign="center"
-            style={{ backgroundColor: "#E19226", minHeight: 700, backgroundImage:  `url(${"http://localhost:3000/thank_you.png"})`, backgroundSize: 'cover'}}
+            style={{
+              backgroundColor: "#E19226",
+              minHeight: 700,
+              backgroundImage: `url(${"http://localhost:3000/thank_you.png"})`,
+              backgroundSize: "cover"
+            }}
             vertical
           >
             <HomepageHeading />
@@ -165,8 +181,12 @@ class MobileContainer extends Component {
           onHide={this.handleSidebarHide}
           vertical
           visible={sidebarOpened}
-          style={{ minHeight: 350, padding: "1em 0em",backgroundColor: "#E19226",opacity: .75 }}
-          
+          style={{
+            minHeight: 350,
+            padding: "1em 0em",
+            backgroundColor: "#E19226",
+            opacity: 0.75
+          }}
         >
           <Menu.Item as="a" active>
             {" "}
@@ -190,13 +210,33 @@ class MobileContainer extends Component {
           <Segment
             inverted
             textAlign="center"
-            style={{ minHeight: 350, padding: "1em 0em",backgroundColor: "#E19226",opacity: .75,  backgroundImage:  `url(${"http://localhost:3000/thank_you.png"})`, backgroundSize: 'cover'}}
+            style={{
+              minHeight: 350,
+              padding: "1em 0em",
+              backgroundColor: "#E19226",
+              opacity: 0.75,
+              backgroundImage: `url(${"http://localhost:3000/thank_you.png"})`,
+              backgroundSize: "cover"
+            }}
             vertical
           >
             <Container>
-              <Menu style={{border: "none"}}inverted pointing secondary size="large">
-                <Menu.Item onClick={this.handleToggle} style={{backgroundColor: "white", padding: "1em", borderRadius:"5px"}}>
-                  <Icon color='teal' name="sidebar"  />
+              <Menu
+                style={{ border: "none" }}
+                inverted
+                pointing
+                secondary
+                size="large"
+              >
+                <Menu.Item
+                  onClick={this.handleToggle}
+                  style={{
+                    backgroundColor: "white",
+                    padding: "1em",
+                    borderRadius: "5px"
+                  }}
+                >
+                  <Icon color="teal" name="sidebar" />
                 </Menu.Item>
               </Menu>
             </Container>
@@ -230,21 +270,15 @@ const HomepageLayout = () => (
     <Segment style={{ padding: "8em 0em" }} vertical>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
-      
-        <Carousel play={5000}>
-          <Image src='//v2.grommet.io/assets/Wilderpeople_Ricky.jpg' />
-          <Image src='//v2.grommet.io/assets/IMG_4245.jpg' />
-          <Image src='//v2.grommet.io/assets/IMG_4210.jpg' />
-        </Carousel>
-     
+          <Carousel play={5000}>
+            <Image src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg" />
+            <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
+            <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
+          </Carousel>
         </Grid.Row>
         <Grid.Row></Grid.Row>
       </Grid>
     </Segment>
-
-    
-
-
 
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
       <Container>

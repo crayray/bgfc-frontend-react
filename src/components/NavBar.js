@@ -13,13 +13,11 @@ import {
   Visibility
 } from "semantic-ui-react";
 
-
 const getWidth = () => {
   const isSSR = typeof window === "undefined";
 
   return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth;
 };
-
 
 class DesktopContainer extends Component {
   state = {};
@@ -44,41 +42,50 @@ class DesktopContainer extends Component {
             // style={{ minHeight: 700, padding: "1em 0em" }}
             vertical
           > */}
-            <Menu
-              fixed={fixed ? "top" : null}
-              inverted={!fixed}
-              pointing={!fixed}
-              secondary={!fixed}
-              size="massive"
-              style={{backgroundColor: "#222220",opacity: .75, marginBottom: 0, paddingBottom: ".5em" }}
-            >
-              <Container>
-                <Menu.Item as="a" active>
-                  {" "}
-                  <NavLink to="/">Home</NavLink>
-                </Menu.Item>
-                <Menu.Item as="a">
-                  <NavLink to="/about">About</NavLink>
-                </Menu.Item>
-                <Menu.Item as="a">
-                  <NavLink to="/restaurants">Restaurants</NavLink>
-                </Menu.Item>
-                <Menu.Item position="right">
+          <Menu
+            fixed={fixed ? "top" : null}
+            inverted={!fixed}
+            pointing={!fixed}
+            secondary={!fixed}
+            size="massive"
+            style={{
+              backgroundColor: "#222220",
+              opacity: 0.75,
+              marginBottom: 0,
+              paddingBottom: ".5em"
+            }}
+          >
+            <Container>
+              <Menu.Item as="a" active>
+                {" "}
+                <NavLink to="/">Home</NavLink>
+              </Menu.Item>
+              <Menu.Item as="a">
+                <NavLink to="/about">About</NavLink>
+              </Menu.Item>
+              <Menu.Item as="a">
+                <NavLink to="/restaurants">Restaurants</NavLink>
+              </Menu.Item>
+              <Menu.Item position="right">
+                <NavLink to="/events">
                   <Button as="a" inverted={!fixed}>
-                    <NavLink to="/events">Events</NavLink>
+                    Events
                   </Button>
+                </NavLink>
+                <NavLink to="/members">
                   <Button
                     as="a"
                     inverted={!fixed}
                     primary={fixed}
                     style={{ marginLeft: "0.5em" }}
                   >
-                    <NavLink to="/members">Members</NavLink>
+                    Members
                   </Button>
-                </Menu.Item>
-              </Container>
-            </Menu>
-            
+                </NavLink>
+              </Menu.Item>
+            </Container>
+          </Menu>
+
           {/* </Segment> */}
         </Visibility>
 
@@ -116,7 +123,7 @@ class MobileContainer extends Component {
           onHide={this.handleSidebarHide}
           vertical
           visible={sidebarOpened}
-          style={{backgroundColor: "#E19226"}}
+          style={{ backgroundColor: "#E19226" }}
         >
           <Menu.Item as="a" active>
             {" "}
@@ -142,10 +149,21 @@ class MobileContainer extends Component {
             textAlign="center"
             // style={{ minHeight: 200, padding: "1em 0em" }}
             vertical
-            style={{ minHeight: 200, padding: "1em 0em",backgroundColor: "#E19226",opacity: .75 }}
+            style={{
+              minHeight: 200,
+              padding: "1em 0em",
+              backgroundColor: "#E19226",
+              opacity: 0.75
+            }}
           >
-            <Container >
-              <Menu style={{border: "none"}} inverted pointing secondary size="large">
+            <Container>
+              <Menu
+                style={{ border: "none" }}
+                inverted
+                pointing
+                secondary
+                size="large"
+              >
                 <Menu.Item onClick={this.handleToggle}>
                   <Icon name="sidebar" />
                 </Menu.Item>
@@ -175,9 +193,6 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node
 };
 
-const NavBar = () => (
-    <ResponsiveContainer />
-)
-
+const NavBar = () => <ResponsiveContainer />;
 
 export default NavBar;
