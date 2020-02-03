@@ -4,13 +4,10 @@ import { Container, Segment, Card, Grid, Header } from "semantic-ui-react";
 import NavBar from "../components/NavBar";
 import { events } from "../data/events";
 
+
 export default class EventsLayout extends Component {
   render() {
-    const eventImages = [
-      "http://localhost:3000/january_meetup.png",
-      "http://localhost:3000/december_meetup.png",
-      "http://localhost:3000/bgfc-logo.svg"
-    ];
+  
     return (
       <div>
         <NavBar />

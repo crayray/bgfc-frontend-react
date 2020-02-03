@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Card, Image } from "semantic-ui-react";
 import { defaultProps } from "grommet";
+import RsvpModal from "./RsvpModal"
 
 export default function UpcomingEvent({ image, name, blurb}) {
   return (
@@ -30,9 +31,9 @@ export default function UpcomingEvent({ image, name, blurb}) {
           {/* Casa Columbia has been around for a long time! Join us for one of Austin's favorites. */}
         </Card.Description>
         <div className="ui two buttons">
-          <Button inverted color="olive">
-            RSVP
-          </Button>
+          {/* Pass down user props to RSVP modal for either RSVP or login */}
+          {/* Also pass down the upcoming event details to the card */}
+          <RsvpModal />
         </div>
       </Card.Content>
     </Card>
