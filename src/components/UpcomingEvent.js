@@ -3,7 +3,7 @@ import { Button, Card, Image } from "semantic-ui-react";
 import { defaultProps } from "grommet";
 import LoginModal from "./LoginModal"
 
-export default function UpcomingEvent({ image, name, blurb, token}) {
+export default function UpcomingEvent({ image, date, time,location, blurb, token}) {
   return (
     <Card
     raised
@@ -17,7 +17,7 @@ export default function UpcomingEvent({ image, name, blurb, token}) {
        
       </Card.Content>
       <Card.Content extra>
-         <Card.Header>{name}</Card.Header>
+         <Card.Header>{location}</Card.Header>
         <Card.Description style={{marginBottom: ".75em"}}>
         {blurb}
         </Card.Description>
@@ -27,7 +27,12 @@ export default function UpcomingEvent({ image, name, blurb, token}) {
          
           <LoginModal
             token = {token}
-            
+            time= {time}
+            date={date}
+            location={location}
+            image={image}
+
+
            />
         </div>
       </Card.Content>

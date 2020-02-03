@@ -4,18 +4,32 @@ import { Link } from "react-router-dom";
 
 
 
-const RsvpTrigger = ({token}) => {
-  // let { token } = props;
+const RsvpTrigger = props => {
+  let { token, time, date, location, image } = props;
+  
   console.log(token)
   if (token === null) {
-    return <LoginModal />
+    return <LoginModal
+      token={token}
+      time={time}
+      date={date}
+      location={location}
+      image={image}
+
+     />
   } else {
-    return <RsvpModal />
+    return <RsvpModal
+    token={token}
+      time={time}
+      date={date}
+      location={location}
+      image={image}
+       />
   }
 };
 export default RsvpTrigger;
 
-const RsvpModal= () => (
+const RsvpModal= props => (
   <Modal
     trigger={
       <Button inverted color="olive">
@@ -23,12 +37,14 @@ const RsvpModal= () => (
       </Button>
     }
   >
-    <Modal.Header>Event Details</Modal.Header>
+    <Modal.Header>{props.location}</Modal.Header>
     <Modal.Content image>
-      <Image wrapped size="small" src="http://localhost:3000/woman_logo.png" />
+      <Image wrapped size="small" src={props.image} />
       <Modal.Description>
-        <Header>Casa Columbia (Event Name)</Header>
-        <p>Time Date Address</p>
+        <Header>Event Details:</Header>
+       <p><strong>Date:</strong> {props.date}</p>
+       <p><strong>Time:</strong> {props.time}</p>
+       <p><strong>Location:</strong> {props.location}</p>
       </Modal.Description>
     </Modal.Content>
     <Modal.Actions>
@@ -44,7 +60,7 @@ const RsvpModal= () => (
 
 
 
-const LoginModal= () => (
+const LoginModal= props => (
   <Modal
     trigger={
       <Button inverted color="olive">
@@ -52,12 +68,17 @@ const LoginModal= () => (
       </Button>
     }
   >
-    <Modal.Header>Event Details</Modal.Header>
+    <Modal.Header>{props.location}</Modal.Header>
     <Modal.Content image>
       <Image wrapped size="small" src="http://localhost:3000/woman_logo.png" />
       <Modal.Description>
-        <Header>Casa Columbia (Event Name)</Header>
-        <p>Time Date Address</p>
+        <Header>Event Details:</Header>
+       <p><strong>Date:</strong> {props.date}</p>
+       <p><strong>Time:</strong> {props.time}</p>
+       <p><strong>Location:</strong> {props.location}</p>
+      </Modal.Description>
+      <Modal.Description>
+        <p>Please Login or Sign up to RSVP!</p>
       </Modal.Description>
     </Modal.Content>
     <Modal.Actions>

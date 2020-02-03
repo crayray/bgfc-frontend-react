@@ -39,10 +39,12 @@ export default class EventsLayout extends Component {
                   {events.map(event => (
                     <UpcomingEvent
                       image={event.image}
-                      name={event.name}
+                      location={event.location_name}
                       blurb={event.blurb}
                       id={event.id}
                       token={this.state.jwt}
+                      date={event.date}
+                      time={event.time}
                     />
                   ))}
                 </Card.Group>
