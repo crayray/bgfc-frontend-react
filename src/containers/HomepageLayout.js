@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "../stylesheets/HomePageLayout.css";
+import NavBar from "../components/NavBar";
 
 import {
   Button,
@@ -87,51 +88,7 @@ class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
-          <Menu
-            fixed={fixed ? "top" : null}
-            inverted={!fixed}
-            pointing={!fixed}
-            secondary={!fixed}
-            size="massive"
-            style={{
-              backgroundColor: "#222220",
-              opacity: 0.75,
-              paddingBottom: ".5em",
-              marginBottom: 0
-            }}
-          >
-            <Container>
-              <Menu.Item as="a" active>
-                {" "}
-                <NavLink to="/">
-                  <Link style={{ textDecoration: "none" }}>Home</Link>
-                </NavLink>
-              </Menu.Item>
-              <Menu.Item as="a">
-                <NavLink to="/about">About</NavLink>
-              </Menu.Item>
-              <Menu.Item as="a">
-                <NavLink to="/restaurants">Restaurants</NavLink>
-              </Menu.Item>
-              <Menu.Item position="right">
-                <NavLink to="/events">
-                  <Button as="a" inverted={!fixed}>
-                    Events
-                  </Button>
-                </NavLink>
-                <NavLink to="/members">
-                  <Button
-                    as="a"
-                    inverted={!fixed}
-                    primary={fixed}
-                    style={{ textDecoration: "none", marginLeft: "0.5em" }}
-                  >
-                    Members
-                  </Button>
-                </NavLink>
-              </Menu.Item>
-            </Container>
-          </Menu>
+          <NavBar />
           <Segment
             inverted
             textAlign="center"

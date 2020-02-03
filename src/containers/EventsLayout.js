@@ -4,24 +4,19 @@ import { Container, Segment, Card, Grid, Header } from "semantic-ui-react";
 import NavBar from "../components/NavBar";
 import { events } from "../data/events";
 
-
 export default class EventsLayout extends Component {
   render() {
-  
     return (
       <div>
         <NavBar />
         <Segment style={{ padding: "8em 0em" }} vertical>
-            <Grid container >
+          <Grid container>
             <Grid.Row>
-                <Container centered textAlign="center"> 
-                <Header>
-                    Upcoming Events
-                </Header>
-            
-                </Container>
+              <Container centered textAlign="center">
+                <Header>Upcoming Events</Header>
+              </Container>
             </Grid.Row>
-            </Grid>
+          </Grid>
         </Segment>
         <Segment style={{ padding: "8em 0em" }} vertical>
           <Grid container stackable verticalAlign="middle">
@@ -43,9 +38,7 @@ export default class EventsLayout extends Component {
           </Grid>
         </Segment>
         <Segment>
-            <Header>
-                What can I expect from the event?
-            </Header>
+          <Header>What can I expect from the event?</Header>
         </Segment>
       </div>
     );
