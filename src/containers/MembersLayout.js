@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import NavBar from "../components/NavBar";
 
-export default function MembersLayout() {
-    return (
-        <div style={{backgroundColor: "purple"}}>
+
+export default class MembersLayout extends React.Component {
+    render() {
+        return (
+            <div>
+              <NavBar />  
+              <div style={{backgroundColor: "purple"}}>
             <h1> Hello from Members page</h1>
         </div>
-    )
+            </div>
+        )
+    }
 }
