@@ -67,6 +67,7 @@
 
 import React from 'react'
 import { Button, Header, Image, Modal, Icon } from 'semantic-ui-react'
+import { Link } from "react-router-dom";
 
 
 
@@ -87,10 +88,10 @@ const ModalModalExample = () => (
     <Modal.Actions>
     <Button color="olive" icon labelPosition='left'>
       <Icon name='close' />
-      Signup
+      <Link to="/signup">  Signup </Link>
     </Button>
     <Button color="olive"  icon labelPosition='right'>
-            Login <Icon name='right chevron' />
+         <Link to="/login">   Login</Link> <Icon name='right chevron' />
           </Button>
     </Modal.Actions>
     {/* <Modal.Actions>
