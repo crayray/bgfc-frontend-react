@@ -1,11 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import { Button, Header, Image, Modal, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 
 
+
 const RsvpTrigger = props => {
   let { token, time, date, location, image, id } = props;
+  
+  
   
   console.log(token)
   if (token === null) {
@@ -35,7 +38,7 @@ const handleRsvp = event => {
   console.log(event);
   // let user = localStorage.getItem("user_id")
   // console.log(user)
-  fetch("http://localhost:4000/rsvps", {
+ fetch("http://localhost:4000/rsvps", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -51,13 +54,27 @@ const handleRsvp = event => {
   })
     .then(r => r.json())
     .then(response => {
-        console.log(response);
-        // localStorage.setItem("jwt", response.jwt);
+        // console.log(response);
+        // setRsvp(!rsvp)
+       
       });
+ 
+    
+      
+      // if (results.id !== undefined){
+      //   return(<p>Sorry, your RSVP didn't go through</p>)
+      // }
+      // return <LoginModal/>
   
 }
 
-const RsvpModal= props => (
+
+
+export function RsvpModal(props) {
+  const [rsvp, setRsvp] = useState(false);
+  console.log(rsvp);
+  return(
+ 
   <Modal
     trigger={
       <Button inverted color="olive">
@@ -76,15 +93,13 @@ const RsvpModal= props => (
       </Modal.Description>
     </Modal.Content>
     <Modal.Actions>
-      {/* <Link to="/login"> */}
         <Button color="olive" icon labelPosition="right" onClick={() => handleRsvp(props.id)}>
           RSVP for this event
           <Icon name="right chevron" />
         </Button>
-      {/* </Link> */}
     </Modal.Actions>
   </Modal>
-);
+  )};
 
 
 
