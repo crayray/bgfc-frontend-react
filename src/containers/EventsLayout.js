@@ -6,7 +6,8 @@ import { events } from "../data/events";
 
 export default class EventsLayout extends Component {
     state= {
-        jwt: ""
+        jwt: "",
+        userId: ""
     }
 
     componentDidMount() {

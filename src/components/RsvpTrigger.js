@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 
 const RsvpTrigger = props => {
-  let { token, time, date, location, image } = props;
+  let { token, time, date, location, image, id } = props;
   
   console.log(token)
   if (token === null) {
@@ -24,10 +24,38 @@ const RsvpTrigger = props => {
       date={date}
       location={location}
       image={image}
+      id={id}
        />
   }
 };
 export default RsvpTrigger;
+
+
+const handleRsvp = event => {
+  console.log(event);
+  // let user = localStorage.getItem("user_id")
+  // console.log(user)
+  fetch("http://localhost:4000/rsvps", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({
+      rsvp: {
+        user_id: `${localStorage.getItem("user_id")}`,
+        event_id: `${event}`
+        
+      }
+    })
+  })
+    .then(r => r.json())
+    .then(response => {
+        console.log(response);
+        // localStorage.setItem("jwt", response.jwt);
+      });
+  
+}
 
 const RsvpModal= props => (
   <Modal
@@ -48,12 +76,12 @@ const RsvpModal= props => (
       </Modal.Description>
     </Modal.Content>
     <Modal.Actions>
-      <Link to="/login">
-        <Button color="olive" icon labelPosition="right">
+      {/* <Link to="/login"> */}
+        <Button color="olive" icon labelPosition="right" onClick={() => handleRsvp(props.id)}>
           RSVP for this event
           <Icon name="right chevron" />
         </Button>
-      </Link>
+      {/* </Link> */}
     </Modal.Actions>
   </Modal>
 );
@@ -95,9 +123,6 @@ const LoginModal= props => (
         </Button>
       </Link>
     </Modal.Actions>
-    {/* <Modal.Actions>
-      <NestedModal />
-    </Modal.Actions> */}
   </Modal>
 );
 

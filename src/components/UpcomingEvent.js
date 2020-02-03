@@ -1,9 +1,9 @@
 import React from "react";
 import { Button, Card, Image } from "semantic-ui-react";
 import { defaultProps } from "grommet";
-import LoginModal from "./LoginModal"
+import RsvpTrigger from "./RsvpTrigger"
 
-export default function UpcomingEvent({ image, date, time,location, blurb, token}) {
+export default function UpcomingEvent({ image, date, time,location, blurb, token, id }) {
   return (
     <Card
     raised
@@ -22,15 +22,15 @@ export default function UpcomingEvent({ image, date, time,location, blurb, token
         {blurb}
         </Card.Description>
         <div className="ui two buttons">
-          {/* Pass down user props to RSVP modal for either RSVP or login */}
-          {/* Also pass down the upcoming event details to the card */}
+    
          
-          <LoginModal
+          <RsvpTrigger
             token = {token}
             time= {time}
             date={date}
             location={location}
             image={image}
+            id={id}
 
 
            />
