@@ -5,6 +5,19 @@ import NavBar from "../components/NavBar";
 import { events } from "../data/events";
 
 export default class EventsLayout extends Component {
+    state= {
+        jwt: ""
+    }
+
+    componentDidMount() {
+        var token = localStorage.getItem('jwt');
+       
+        this.setState({
+            jwt: token
+        }, () => console.log(this.state.jwt))
+    }
+
+    
   render() {
     return (
       <div>
@@ -29,6 +42,7 @@ export default class EventsLayout extends Component {
                       name={event.name}
                       blurb={event.blurb}
                       id={event.id}
+                      token={this.state.jwt}
                     />
                   ))}
                 </Card.Group>
