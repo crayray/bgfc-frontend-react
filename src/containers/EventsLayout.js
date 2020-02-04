@@ -21,7 +21,27 @@ export default class EventsLayout extends Component {
         
     }
 
-    
+   handleRsvp = (event, user) => {
+      // console.log(event);
+      // console.log(user);
+      
+      fetch("http://localhost:4000/rsvps", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          rsvp: {
+            user_id: `${user}`,
+            event_id: `${event}`
+            
+          }
+        })
+      })
+      .then(r => r.json())
+      .then(response => console.log(response))
+    }
   render() {
     return (
       <div>
@@ -49,6 +69,7 @@ export default class EventsLayout extends Component {
                       token={this.state.jwt}
                       date={event.date}
                       time={event.time}
+                      handleRsvp={this.handleRsvp}
                     />
                   ))}
                 </Card.Group>

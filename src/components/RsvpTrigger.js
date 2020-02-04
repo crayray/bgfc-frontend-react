@@ -53,6 +53,7 @@ export default class RsvpTrigger extends React.Component {
       });
       // console.log(this.state);
   }
+  
   render() {
     // console.log(token)
     let { token, time, date, location, image, id } = this.props;
@@ -74,6 +75,7 @@ export default class RsvpTrigger extends React.Component {
         image={image}
         user_id={this.state.user_id}
         event_id={id}
+        handleRsvp={this.props.handleRsvp}
          />
     }
    
@@ -97,44 +99,37 @@ const handleFetch = (event, user) => {
   })
 }
 
-const handleRsvp = (event, user) => {
-  console.log(event);
-  console.log(user);
+// const handleRsvp = (event, user) => {
+//   console.log(event);
+//   console.log(user);
   
-  fetch("http://localhost:4000/rsvps", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json"
-    },
-    body: JSON.stringify({
-      rsvp: {
-        user_id: `${user}`,
-        event_id: `${event}`
+//   fetch("http://localhost:4000/rsvps", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Accept: "application/json"
+//     },
+//     body: JSON.stringify({
+//       rsvp: {
+//         user_id: `${user}`,
+//         event_id: `${event}`
         
-      }
-    })
-  })
- 
-    
-      
-      // if (results.id !== undefined){
-      //   return(<p>Sorry, your RSVP didn't go through</p>)
-      // }
-      // return <LoginModal/>
-  
-}
+//       }
+//     })
+//   }) 
+// }
 
 
 
 export function RsvpModal(props) {
   const [rsvp, setRsvp] = useState(false);
-  console.log(props);
+  const {handleRsvp} = props;
+  // console.log(props);
   return(
  
   <Modal
     trigger={
-      <Button inverted color="olive">
+      <Button inverted color="olive" >
         RSVP
       </Button>
     }
@@ -150,15 +145,16 @@ export function RsvpModal(props) {
       </Modal.Description>
     </Modal.Content>
     <Modal.Actions>
-        {/* <Button color="olive" icon labelPosition="right" onClick={() => handleRsvp(props.id)}>
+        <Button color="olive" icon labelPosition="right" user_id={props.user_id}  event_id={props.event_id} onClick={() => props.handleRsvp(props.user_id, props.event_id )}>
           RSVP for this event
           <Icon name="right chevron" />
-        </Button> */}
-        <NestedRsvpModal 
+        </Button>
+        {/* <NestedRsvpModal 
             user_id={props.user_id}
             event_id={props.event_id}
+            handleRsvp={handleRsvp}
             
-        />
+        /> */}
     </Modal.Actions>
   </Modal>
   )};
@@ -183,7 +179,7 @@ export function RsvpModal(props) {
           onClose={this.close}
           size='small'
           trigger={
-            <Button color="olive" icon labelPosition="right" onClick={() => handleRsvp(this.props.user_id, this.props.event_id )} >
+            <Button color="olive" icon labelPosition="right"   >
             {/* // <Button color="olive" icon labelPosition="right" onClick={() => testRsvp()}> */}
           RSVP for this event
           <Icon name="right chevron" />
