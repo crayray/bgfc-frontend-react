@@ -35,22 +35,22 @@ import { Link } from "react-router-dom";
 
 
 export default class RsvpTrigger extends React.Component {
-  state = {
-    rsvp: false,
-    user_id: 0
-  } 
+  // state = {
+  //   rsvp: false,
+  //   user_id: 0
+  // } 
 
   componentDidMount() {
-    fetch(`http://localhost:4000/users/${localStorage.getItem("user_id")}`)
-    .then(r => r.json())
-    .then(response => {
-        // console.log(response.id);
-        this.setState({
-          user_id: response.id
-        })
+    // fetch(`http://localhost:4000/users/${localStorage.getItem("user_id")}`)
+    // .then(r => r.json())
+    // .then(response => {
+    //     // console.log(response.id);
+    //     this.setState({
+    //       user_id: response.id
+    //     })
         
        
-      });
+    //   });
       // console.log(this.state);
   }
   
@@ -73,9 +73,10 @@ export default class RsvpTrigger extends React.Component {
         date={date}
         location={location}
         image={image}
-        user_id={this.state.user_id}
-        event_id={id}
+        user_id={this.props.user_id}
+        event_id={this.props.event_id}
         handleRsvp={this.props.handleRsvp}
+        rsvp={this.props.rsvp}
          />
     }
    
@@ -122,9 +123,9 @@ const handleFetch = (event, user) => {
 
 
 export function RsvpModal(props) {
-  const [rsvp, setRsvp] = useState(false);
+  const [rsvp, setRsvp] = useState(props);
   const {handleRsvp} = props;
-  // console.log(props);
+  console.log(props);
   return(
  
   <Modal
@@ -142,6 +143,7 @@ export function RsvpModal(props) {
        <p><strong>Date:</strong> {props.date}</p>
        <p><strong>Time:</strong> {props.time}</p>
        <p><strong>Location:</strong> {props.location}</p>
+       <p>Confirmation: You have RSVP'd: {props.rsvp}</p>
       </Modal.Description>
     </Modal.Content>
     <Modal.Actions>
@@ -163,7 +165,7 @@ export function RsvpModal(props) {
     console.log("This works");
     
   }
-  class NestedRsvpModal extends React.Component {
+  export class NestedRsvpModal extends React.Component {
     state = { open: false }
   
     open = () => this.setState({ open: true })

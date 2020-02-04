@@ -7,15 +7,28 @@ import { events } from "../data/events";
 export default class EventsLayout extends Component {
     state= {
         jwt: "",
-        userId: ""
+        user_id: "",
+        rsvp: false
+
     }
 
     componentDidMount() {
         var token = localStorage.getItem('jwt');
-       
+        fetch(`http://localhost:4000/users/${localStorage.getItem("user_id")}`)
+    .then(r => r.json())
+    .then(response => {
+        // console.log(response.id);
         this.setState({
-            jwt: token
-        }, () => console.log(this.state.jwt))
+          jwt: token,
+          user_id: response.id
+        })
+        
+       
+      });
+       
+        // this.setState({
+        //     jwt: token
+        // }, () => console.log(this.state.jwt))
 
 
         
@@ -40,7 +53,11 @@ export default class EventsLayout extends Component {
         })
       })
       .then(r => r.json())
-      .then(response => console.log(response))
+      .then(response => 
+        this.setState({
+          rsvp: `${!this.state.rsvp}`
+        })
+      )
     }
   render() {
     return (
@@ -65,11 +82,13 @@ export default class EventsLayout extends Component {
                       image={event.image}
                       location={event.location_name}
                       blurb={event.blurb}
-                      id={event.id}
+                      event_id={event.id}
                       token={this.state.jwt}
                       date={event.date}
                       time={event.time}
                       handleRsvp={this.handleRsvp}
+                      rsvp={this.state.rsvp}
+                      user_id={this.state.user_id}
                     />
                   ))}
                 </Card.Group>
