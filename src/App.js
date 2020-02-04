@@ -7,6 +7,7 @@ import MembersLayout from "./containers/MembersLayout"
 import EventsLayout from "./containers/EventsLayout"
 import RestaurantsLayout from "./containers/RestaurantsLayout"
 import SignUp from "./containers/SignUp"
+// import PrivateRoute from "./components/PrivateRoute"
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
@@ -15,7 +16,8 @@ import { createBrowserHistory } from "history";
 class App extends React.Component {
 
   state= {
-    jwt:""
+    jwt:"",
+    user_id: null
   }
   componentDidMount() {
     // fetch('http://localhost:4000/profiles/1', {
@@ -45,8 +47,11 @@ class App extends React.Component {
     //   .then(r => r.json())
     //   .then(console.log);
     
-    this.setState(
-      {jwt: window.localStorage}
+    this.setState({
+      jwt: window.localStorage.jwt,
+      user_id: window.localStorage.user_id
+      
+      }
     )
   }
   
@@ -66,15 +71,16 @@ class App extends React.Component {
           <Route exact path="/about" component={AboutLayout} />
           <Route exact path="/restaurants" component={RestaurantsLayout} />
           <Route exact path="/events" component={EventsLayout} />
-          <Route exact path="/members" component={MembersLayout} />
-          <Route path="/members" render={() => (
-           window.localStorage.jwt ? (
+          {/* <Route exact path="/members" component={MembersLayout} /> */}
+          {/* <Route path="/members" render={() => (
+           (this.state.jwt === undefined) ? (
               <Redirect to="/login" />
             ) : (
               <MembersLayout to="/members" />
             )
             
-          ), () => console.log(this.state)} />
+          ), () => console.log(this.state)} /> */}
+          <PrivateRoute path='/members' component={MembersLayout} />
           <Route exact path="/login" component={SignInSide} />
           <Route exact path="/signup" component={SignUp} />
         </Switch>
@@ -84,3 +90,11 @@ class App extends React.Component {
 }
 
 export default App;
+
+const PrivateRoute = ({component: Component, ...rest}) => (
+  <Route {...rest} render={(props) => (
+      localStorage.length === 0
+        ? <Redirect to='/login' />
+        : <Component {...props} />
+    )} />
+)

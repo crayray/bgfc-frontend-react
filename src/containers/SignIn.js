@@ -65,7 +65,6 @@ export default function SignInSide() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const handleLogin = event => {
     event.preventDefault();
-    console.log("this works")
     fetch("http://localhost:4000/login", {
         method: "POST",
         headers: {
