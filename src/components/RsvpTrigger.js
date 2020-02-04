@@ -36,19 +36,22 @@ import { Link } from "react-router-dom";
 
 export default class RsvpTrigger extends React.Component {
   state = {
-    rsvp: false
+    rsvp: false,
+    user_id: 0
   } 
 
   componentDidMount() {
     fetch(`http://localhost:4000/users/${localStorage.getItem("user_id")}`)
     .then(r => r.json())
     .then(response => {
-        console.log(response);
- 
+        // console.log(response.id);
+        this.setState({
+          user_id: response.id
+        })
         
        
       });
-    
+      // console.log(this.state);
   }
   render() {
     // console.log(token)
@@ -69,18 +72,16 @@ export default class RsvpTrigger extends React.Component {
         date={date}
         location={location}
         image={image}
-        id={id}
+        user_id={this.state.user_id}
+        event_id={id}
          />
     }
    
   }
 }
 
-
-
-const handleRsvp = event => {
-  console.log(event);
- fetch("http://localhost:4000/rsvps", {
+const handleFetch = (event, user) => {
+  fetch("http://localhost:4000/rsvps", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -88,22 +89,32 @@ const handleRsvp = event => {
     },
     body: JSON.stringify({
       rsvp: {
-        user_id: `${localStorage.getItem("user_id")}`,
+        user_id: `${user}`,
         event_id: `${event}`
         
       }
     })
   })
-    .then(r => r.json())
-    .then(response => {
-        console.log(response);
-        // this.setState({
-        //   rsvp: true
-        // })
+}
 
+const handleRsvp = (event, user) => {
+  console.log(event);
+  console.log(user);
+  
+  fetch("http://localhost:4000/rsvps", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({
+      rsvp: {
+        user_id: `${user}`,
+        event_id: `${event}`
         
-       
-      });
+      }
+    })
+  })
  
     
       
@@ -118,7 +129,7 @@ const handleRsvp = event => {
 
 export function RsvpModal(props) {
   const [rsvp, setRsvp] = useState(false);
-  console.log(rsvp);
+  console.log(props);
   return(
  
   <Modal
@@ -139,15 +150,57 @@ export function RsvpModal(props) {
       </Modal.Description>
     </Modal.Content>
     <Modal.Actions>
-        <Button color="olive" icon labelPosition="right" onClick={() => handleRsvp(props.id)}>
+        {/* <Button color="olive" icon labelPosition="right" onClick={() => handleRsvp(props.id)}>
           RSVP for this event
           <Icon name="right chevron" />
-        </Button>
+        </Button> */}
+        <NestedRsvpModal 
+            user_id={props.user_id}
+            event_id={props.event_id}
+            
+        />
     </Modal.Actions>
   </Modal>
   )};
 
-
+  const testRsvp = () => {
+    console.log("This works");
+    
+  }
+  class NestedRsvpModal extends React.Component {
+    state = { open: false }
+  
+    open = () => this.setState({ open: true })
+    close = () => this.setState({ open: false })
+  
+    render() {
+      const { open } = this.state
+  
+      return (
+        <Modal
+          open={open}
+          onOpen={this.open}
+          onClose={this.close}
+          size='small'
+          trigger={
+            <Button color="olive" icon labelPosition="right" onClick={() => handleRsvp(this.props.user_id, this.props.event_id )} >
+            {/* // <Button color="olive" icon labelPosition="right" onClick={() => testRsvp()}> */}
+          RSVP for this event
+          <Icon name="right chevron" />
+        </Button>
+          }
+        >
+          <Modal.Header>Modal #2</Modal.Header>
+          <Modal.Content>
+            <p>That's everything!</p>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button icon='check' content='All Done' onClick={this.close} />
+          </Modal.Actions>
+        </Modal>
+      )
+    }
+  }
 
 const LoginModal= props => (
   <Modal
