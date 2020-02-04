@@ -82,8 +82,8 @@ export default function SignInSide() {
         .then(r => r.json())
         .then(response => {
             console.log(response);
-            localStorage.setItem("jwt", response.jwt, "user_id", response.user.id);
-            // localStorage.setItem("user_id", response.user.id);
+            localStorage.setItem("jwt", response.jwt);
+            localStorage.setItem("user_id", response.user.id);
             setIsLoggedIn(true)
           })
           
