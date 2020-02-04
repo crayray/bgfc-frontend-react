@@ -4,40 +4,82 @@ import { Link } from "react-router-dom";
 
 
 
+// Before converting to class component:
+// const RsvpTrigger = props => {
+//   let { token, time, date, location, image, id } = props;
+  
+  
+  
+//   console.log(token)
+//   if (token === null) {
+//     return <LoginModal
+//       token={token}
+//       time={time}
+//       date={date}
+//       location={location}
+//       image={image}
 
-const RsvpTrigger = props => {
-  let { token, time, date, location, image, id } = props;
-  
-  
-  
-  console.log(token)
-  if (token === null) {
-    return <LoginModal
-      token={token}
-      time={time}
-      date={date}
-      location={location}
-      image={image}
+//      />
+//   } else {
+//     return <RsvpModal
+//     token={token}
+//       time={time}
+//       date={date}
+//       location={location}
+//       image={image}
+//       id={id}
+//        />
+//   }
+// };
+// export default RsvpTrigger;
 
-     />
-  } else {
-    return <RsvpModal
-    token={token}
-      time={time}
-      date={date}
-      location={location}
-      image={image}
-      id={id}
-       />
+
+export default class RsvpTrigger extends React.Component {
+  state = {
+    rsvp: false
+  } 
+
+  componentDidMount() {
+    fetch(`http://localhost:4000/users/${localStorage.getItem("user_id")}`)
+    .then(r => r.json())
+    .then(response => {
+        console.log(response);
+ 
+        
+       
+      });
+    
   }
-};
-export default RsvpTrigger;
+  render() {
+    // console.log(token)
+    let { token, time, date, location, image, id } = this.props;
+    if (this.props.token === null) {
+      return <LoginModal
+        token={token}
+        time={time}
+        date={date}
+        location={location}
+        image={image}
+  
+       />
+    } else {
+      return <RsvpModal
+      token={token}
+        time={time}
+        date={date}
+        location={location}
+        image={image}
+        id={id}
+         />
+    }
+   
+  }
+}
+
 
 
 const handleRsvp = event => {
   console.log(event);
-  // let user = localStorage.getItem("user_id")
-  // console.log(user)
  fetch("http://localhost:4000/rsvps", {
     method: "POST",
     headers: {
@@ -54,8 +96,12 @@ const handleRsvp = event => {
   })
     .then(r => r.json())
     .then(response => {
-        // console.log(response);
-        // setRsvp(!rsvp)
+        console.log(response);
+        // this.setState({
+        //   rsvp: true
+        // })
+
+        
        
       });
  
