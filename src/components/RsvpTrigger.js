@@ -123,12 +123,21 @@ const handleFetch = (event, user) => {
 
 
 export function RsvpModal(props) {
-  const [rsvp, setRsvp] = useState(props);
+  const [open, setOpen] = useState(true);
+  // console.log(open)
   const {handleRsvp} = props;
-  console.log(props);
+  // console.log(props);
+
+ const closeModal = () => console.log("thisworks");
+ 
+
+//  const openModal = () => this.setState({ open: true })
+    
   return(
  
   <Modal
+  onClose={closeModal}
+  // onOpen={openModal}
     trigger={
       <Button inverted color="olive" >
         RSVP
@@ -147,10 +156,20 @@ export function RsvpModal(props) {
       </Modal.Description>
     </Modal.Content>
     <Modal.Actions>
-        <Button color="olive" icon labelPosition="right" user_id={props.user_id}  event_id={props.event_id} onClick={() => props.handleRsvp(props.user_id, props.event_id )}>
+
+        {!props.rsvp ? (<Button color="olive" icon labelPosition="right" user_id={props.user_id}  event_id={props.event_id} onClick={() => props.handleRsvp(props.user_id, props.event_id )}>
           RSVP for this event
           <Icon name="right chevron" />
-        </Button>
+        </Button>) :
+        (<Button color="olive" icon labelPosition="right" user_id={props.user_id}  event_id={props.event_id} onClick={() => closeModal()}>
+          Close RSVP
+          <Icon name="right chevron" />
+        </Button>)}
+
+
+
+
+
         {/* <NestedRsvpModal 
             user_id={props.user_id}
             event_id={props.event_id}
