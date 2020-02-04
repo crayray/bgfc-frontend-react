@@ -34,6 +34,7 @@ export default function UpcomingEvent({ image, date, time,location, blurb, token
             handleRsvp={handleRsvp}
             rsvp={rsvp}
             user_id={user_id}
+          
 
 
            />
