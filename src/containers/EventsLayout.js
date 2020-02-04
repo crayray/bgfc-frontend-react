@@ -16,6 +16,9 @@ export default class EventsLayout extends Component {
         this.setState({
             jwt: token
         }, () => console.log(this.state.jwt))
+
+
+        
     }
 
     
