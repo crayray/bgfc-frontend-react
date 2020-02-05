@@ -39,7 +39,11 @@ export default class CreateProfileForm extends Component {
         name: "",
         about: "",
         interest: "",
-        instagram: ""
+        instagram: "",
+        twitter: "",
+        facebook: "",
+        avatar: {}, 
+        user_id: null
     }
     handleOnChange = (event) => {
        this.setState({
@@ -69,6 +73,10 @@ export default class CreateProfileForm extends Component {
         <input type="text" name="instagram" placeholder="Instagram handle" value={this.state.instagram} onChange={this.handleOnChange}  />
       </Form.Field>
       <Form.Field>
+      <Form.Field>
+        <label>Twitter</label>
+        <input type="text" name="twitter" placeholder="Twitter Hnadle" value={this.state.twitter} onChange={this.handleOnChange}  />
+      </Form.Field>
         <label>Facebook</label>
         <input type="text" name="facebook" placeholder="Facebook profile" value={this.state.facebook} onChange={this.handleOnChange}  />
       </Form.Field>
@@ -76,7 +84,12 @@ export default class CreateProfileForm extends Component {
         <label>LinkedIn</label>
         <input type="text" name="linkedin" placeholder="LinkedIn profile" value={this.state.linkedin} onChange={this.handleOnChange}  />
       </Form.Field>
-      <Form.Field control={Button}>Submit</Form.Field>
+    
+      <Form.Field>
+        <label>Upload your Profile photo:</label>
+        <input type="file" name="avatar" onChange={this.handleOnChange}  />
+      </Form.Field>
+      <Form.Field control={Button}>Create my profile</Form.Field>
     </Form>
             </div>
         )
