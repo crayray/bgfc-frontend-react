@@ -11,7 +11,8 @@ export default function UpcomingEvent({ name, user_id, facebook, twitter, instag
         <Card.Content>
           <Image
             floated="center"
-            src="http://localhost:3000/bgfc_logo.jpg"
+            src="http://localhost:3000/bgfc-logo.svg"
+            size="medium"
             circular
           />
          
@@ -23,7 +24,7 @@ export default function UpcomingEvent({ name, user_id, facebook, twitter, instag
           </Card.Description>
           <Card.Content>
          
-              <p>{instagram}</p>
+              <p><strong>Instagram:</strong>@{instagram}</p>
               {twitter}
               {linkedin}
               {user_id}

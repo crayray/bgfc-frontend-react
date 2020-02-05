@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar";
 import { Container, Segment, Card, Grid, Header } from "semantic-ui-react";
 import { events } from "../data/events";
 import ProfileCard from "../components/ProfileCardFront"
+import CreateProfileForm from "../components/CreateProfileForm"
 
 
 export default class MembersLayout extends React.Component {
@@ -29,6 +30,7 @@ export default class MembersLayout extends React.Component {
         return (
             <div>
               <NavBar />  
+             <CreateProfileForm />
               <Segment style={{ padding: "8em 0em" }} vertical>
           <Grid container>
             <Grid.Row>
