@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from "../components/NavBar";
 import { Container, Segment, Card, Grid, Header } from "semantic-ui-react";
 import { events } from "../data/events";
-import ProfileCard from "../components/ProfileCardFront"
+import ProfileCardFront from "../components/ProfileCardFront"
 import CreateProfileForm from "../components/CreateProfileForm"
 
 
@@ -11,7 +11,7 @@ export default class MembersLayout extends React.Component {
             profiles: []
         }
     componentDidMount() {
-        fetch('http://localhost:4000/profiles/', {
+        fetch('http://localhost:4000/users', {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
@@ -25,12 +25,13 @@ export default class MembersLayout extends React.Component {
             })
             )
     }
+
     render() {
         const { profiles } = this.state;
         return (
             <div>
               <NavBar />  
-             <CreateProfileForm />
+             {/* <CreateProfileForm /> */}
               <Segment style={{ padding: "8em 0em" }} vertical>
           <Grid container>
             <Grid.Row>
@@ -45,16 +46,16 @@ export default class MembersLayout extends React.Component {
             <Grid.Row>
               <Container centered>
                 <Card.Group centered>
-                  {profiles.map(profile => (
-                    <ProfileCard
-                        name={profile.name}
-                        user_id={profile.user_id}
-                        about={profile.about}
-                        facebook={profile.facebook}
-                        instagram={profile.instagram}
-                        twitter={profile.twitter}
-                        linkedin={profile.linkedin}
-                        interest={profile.interest1}
+                  {profiles.map(user => (
+                    <ProfileCardFront
+                        // avatar={user.profile.avatar}
+                        // user_id={profile.user_id}
+                        // about={profile.about}
+                        // facebook={profile.facebook}
+                        // instagram={profile.instagram}
+                        // twitter={profile.twitter}
+                        // linkedin={profile.linkedin}
+                        // interest={profile.interest1}
                     />
                   ))}
                   

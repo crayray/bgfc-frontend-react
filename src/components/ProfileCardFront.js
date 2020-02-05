@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, Image } from "semantic-ui-react";
 
 
-export default function UpcomingEvent({ name, user_id, facebook, twitter, instagram, about, interest, linkedin }) {
+export default function ProfileCardFront({ name, user_id, facebook, twitter, instagram, about, interest, linkedin }) {
     return (
       <Card
       raised
