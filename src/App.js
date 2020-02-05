@@ -71,15 +71,6 @@ class App extends React.Component {
           <Route exact path="/about" component={AboutLayout} />
           <Route exact path="/restaurants" component={RestaurantsLayout} />
           <Route exact path="/events" component={EventsLayout} />
-          {/* <Route exact path="/members" component={MembersLayout} /> */}
-          {/* <Route path="/members" render={() => (
-           (this.state.jwt === undefined) ? (
-              <Redirect to="/login" />
-            ) : (
-              <MembersLayout to="/members" />
-            )
-            
-          ), () => console.log(this.state)} /> */}
           <PrivateRoute path='/members' component={MembersLayout} />
           <Route exact path="/login" component={SignInSide} />
           <Route exact path="/signup" component={SignUp} />
