@@ -30,6 +30,7 @@ const options = [
 
 export default class CreateProfileForm extends Component {
 
+    
 
 
 
@@ -41,19 +42,72 @@ export default class CreateProfileForm extends Component {
         interest: "",
         instagram: "",
         twitter: "",
+        linkedin: "",
         facebook: "",
         avatar: {}, 
         user_id: null
     }
+
+
+
+    componentDidMount() {
+        var token = localStorage.getItem('jwt');
+        fetch(`http://localhost:4000/users/${localStorage.getItem("user_id")}`)
+    .then(r => r.json())
+    .then(response => {
+        // console.log(response.id);
+        this.setState({
+          jwt: token,
+          user_id: response.id
+        })
+        
+       
+      });
+    }
+
     handleOnChange = (event) => {
+        if (event.target.name === 'avatar') {
        this.setState({
-           [event.target.name]: event.target.value
+           [event.target.name]: event.target.files[0]
        })
+    }else {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        console.log("Submittig form")
+
+        let profile = {
+            name: this.state.name,
+            about: this.state.about,
+            interest: this.state.interest,
+            instagram: this.state.instagram,
+            twitter: this.state.twitter,
+            linkedin: this.state.linkedin,
+            facebook: this.state.facebook,
+            avatar: this.state.avatar,
+            user_id: this.state.user_id
+        }
+
+        fetch("http://localhost:4000/profiles", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept' : 'application/json'
+            },
+            body: JSON.stringify(profile)
+        })
+        .then(response => response.json())
+        .then(response => console.log(response))
     }
     render() {
         return (
             <div>
-                <Form>
+                <Form onSubmit={this.handleSubmit}>
       <Form.Field>
         <label>Name</label>
         <input type="text" name="name" placeholder="Name" value={this.state.name} onChange={this.handleOnChange}/>
