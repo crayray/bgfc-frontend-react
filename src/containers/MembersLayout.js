@@ -30,6 +30,7 @@ export default class MembersLayout extends React.Component {
     }
 
     onSearchChange= event => {
+      
       this.setState({
         searchField: event.target.value
       })
@@ -41,6 +42,7 @@ export default class MembersLayout extends React.Component {
 
         const filteredProfiles = this.state.profiles.filter(profile => {
           return profile.name.toLowerCase().includes(this.state.searchField.toLowerCase());
+          // return profile.name.toLowerCase() == this.state.searchField.toLowerCase()
        })
         return (
             <div>

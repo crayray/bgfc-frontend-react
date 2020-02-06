@@ -20,7 +20,8 @@ export default function CardContainer({profiles}) {
                       twitter={profile.twitter}
                       linkedin={profile.linkedin}
                       interest={profile.interest1}
-                      about={profile.about}
+                      key={profile.profile_id}
+                      
                   />
                 ))}
                 
