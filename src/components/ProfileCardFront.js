@@ -35,7 +35,7 @@ export default class ProfileCardFront extends React.Component {
             floated="center"
             src= {this.state.image_url}
             size="medium"
-            circular
+            
           />
          
         </Card.Content>

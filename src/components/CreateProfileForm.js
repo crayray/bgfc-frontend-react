@@ -134,27 +134,20 @@ export default class CreateProfileForm extends Component {
               onChange={this.handleOnChange}
             />
           </Form.Field>
-          {/* <Form.Select
-            fluid
-            label='Gender'
-            options={options}
-            placeholder='Gender'
-            onChange={this.handleOnChange}
-            name="interest"
-            value={this.state.interest}
 
-          /> */}
-          <Form.Field
-          type="text"
-            control={Select}
-            label="Select your top interest"
-            options={options}
-            placeholder="Interest"
-            onChange={this.handleOnChange}
-            value={this.state.interest}
-            name="interest"
-            
-          />
+          <Form.Select
+              fluid
+              label="Select an Interest"
+              name="interest"
+              options={options}
+              placeholder="Select an Interest"
+
+              onChange={(e, {value, text}) => {
+                this.setState({
+                  interest: value
+                })
+              }}
+            />
           <Form.Field>
             <label>Instagram</label>
             <input
