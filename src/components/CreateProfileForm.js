@@ -6,23 +6,23 @@ import React, { Component } from "react";
 
 
 const options = [
-  { key: "a", text: "Activism", value: "activism" },
-  { key: "b", text: "Book Clubs", value: "books" },
-  { key: "c", text: "Cooking", value: "cooking" },
-  { key: "z", text: "Crafting", value: "crafting" },
-  { key: "f", text: "Fashion and Upcycling", value: "fashion" },
-  { key: "l", text: "Languages", value: "languages" },
-  { key: "o", text: "Outdoors", value: "outdoors" },
-  { key: "s", text: "Self Care", value: "selfcare" },
-  { key: "t", text: "Travel", value: "travel" },
-  { key: "v", text: "Volunteering", value: "volunteering" }
+  { key: "a", text: "Activism", value: "Activism" },
+  { key: "b", text: "Book Clubs", value: "Books" },
+  { key: "c", text: "Cooking", value: "Cooking" },
+  { key: "z", text: "Crafting", value: "Crafting" },
+  { key: "f", text: "Fashion and Upcycling", value: "Fashion and Upcycling" },
+  { key: "l", text: "Languages", value: "Languages" },
+  { key: "o", text: "Outdoors", value: "Outdoors" },
+  { key: "s", text: "Self Care", value: "Self Care" },
+  { key: "t", text: "Travel", value: "Travel" },
+  { key: "v", text: "Volunteering", value: "Volunteering" }
 ];
 
 export default class CreateProfileForm extends Component {
   state = {
     name: "",
     about: "",
-    interest: "",
+    interes1: "",
     instagram: "",
     twitter: "",
     linkedin: "",
@@ -66,7 +66,7 @@ export default class CreateProfileForm extends Component {
     let profile = {
       name: this.state.name,
       about: this.state.about,
-      interest: this.state.interest,
+      interest1: this.state.interest1,
       instagram: this.state.instagram,
       twitter: this.state.twitter,
       linkedin: this.state.linkedin,
@@ -144,7 +144,7 @@ export default class CreateProfileForm extends Component {
 
               onChange={(e, {value, text}) => {
                 this.setState({
-                  interest: value
+                  interest1: value
                 })
               }}
             />
