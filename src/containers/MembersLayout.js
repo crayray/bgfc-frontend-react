@@ -11,7 +11,7 @@ export default class MembersLayout extends React.Component {
             profiles: []
         }
     componentDidMount() {
-        fetch('http://localhost:4000/users', {
+        fetch('http://localhost:4000/profiles', {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ export default class MembersLayout extends React.Component {
         return (
             <div>
               <NavBar />  
-             {/* <CreateProfileForm /> */}
+             <CreateProfileForm />
               <Segment style={{ padding: "8em 0em" }} vertical>
           <Grid container>
             <Grid.Row>
@@ -46,9 +46,11 @@ export default class MembersLayout extends React.Component {
             <Grid.Row>
               <Container centered>
                 <Card.Group centered>
-                  {profiles.map(user => (
+                  {profiles.map(profile => (
                     <ProfileCardFront
-                        // avatar={user.profile.avatar}
+                        name={profile.name}
+                        user_id={profile.user_id}
+                        profile_id={profile.profile_id}
                         // user_id={profile.user_id}
                         // about={profile.about}
                         // facebook={profile.facebook}

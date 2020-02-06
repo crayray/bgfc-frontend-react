@@ -57,6 +57,8 @@ export default class CreateProfileForm extends Component {
     }
   };
 
+// handleOnChange = (e, { value }) => this.setState({ value })
+
   handleSubmit = event => {
     event.preventDefault();
     console.log("Submittig form");
@@ -132,11 +134,26 @@ export default class CreateProfileForm extends Component {
               onChange={this.handleOnChange}
             />
           </Form.Field>
+          {/* <Form.Select
+            fluid
+            label='Gender'
+            options={options}
+            placeholder='Gender'
+            onChange={this.handleOnChange}
+            name="interest"
+            value={this.state.interest}
+
+          /> */}
           <Form.Field
+          type="text"
             control={Select}
             label="Select your top interest"
             options={options}
             placeholder="Interest"
+            onChange={this.handleOnChange}
+            value={this.state.interest}
+            name="interest"
+            
           />
           <Form.Field>
             <label>Instagram</label>
