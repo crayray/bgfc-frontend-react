@@ -1,14 +1,17 @@
 import React from 'react';
 import NavBar from "../components/NavBar";
-import { Container, Segment, Card, Grid, Header } from "semantic-ui-react";
+import { Container, Segment, Grid, Header } from "semantic-ui-react";
 import { events } from "../data/events";
 import ProfileCardFront from "../components/ProfileCardFront"
 import CreateProfileForm from "../components/CreateProfileForm"
+import SearchBar from "../components/SearchBar"
+import CardContainer from './CardContainer';
 
 
 export default class MembersLayout extends React.Component {
         state = {
-            profiles: []
+            profiles: [],
+            searchField: ""
         }
     componentDidMount() {
         fetch('http://localhost:4000/profiles', {
@@ -26,12 +29,24 @@ export default class MembersLayout extends React.Component {
             )
     }
 
+    onSearchChange= event => {
+      this.setState({
+        searchField: event.target.value
+      })
+      
+    }
+
     render() {
         const { profiles } = this.state;
+
+        const filteredProfiles = this.state.profiles.filter(profile => {
+          return profile.name.toLowerCase().includes(this.state.searchField.toLowerCase());
+       })
         return (
             <div>
               <NavBar />  
-             <CreateProfileForm />
+             {/* <CreateProfileForm /> */}
+             <SearchBar onSearchChange={this.onSearchChange}/>
               <Segment style={{ padding: "8em 0em" }} vertical>
           <Grid container>
             <Grid.Row>
@@ -41,32 +56,7 @@ export default class MembersLayout extends React.Component {
             </Grid.Row>
           </Grid>
         </Segment>
-        <Segment style={{ padding: "8em 0em" }} vertical>
-          <Grid container stackable verticalAlign="middle">
-            <Grid.Row>
-              <Container centered>
-                <Card.Group centered>
-                  {profiles.map(profile => (
-                    <ProfileCardFront
-                        name={profile.name}
-                        user_id={profile.user_id}
-                        profile_id={profile.profile_id}
-                        // user_id={profile.user_id}
-                        // about={profile.about}
-                        // facebook={profile.facebook}
-                        // instagram={profile.instagram}
-                        // twitter={profile.twitter}
-                        // linkedin={profile.linkedin}
-                        // interest={profile.interest1}
-                    />
-                  ))}
-                  
-                </Card.Group>
-              </Container>
-            </Grid.Row>
-            <Grid.Row></Grid.Row>
-          </Grid>
-        </Segment>
+        <CardContainer profiles={filteredProfiles} />
             </div>
         )
     }

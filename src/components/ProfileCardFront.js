@@ -8,7 +8,7 @@ export default class ProfileCardFront extends React.Component {
     super(props);
 
     this.state={
-       image : ""
+       image_url : ""
     }
  }
 
@@ -25,7 +25,8 @@ export default class ProfileCardFront extends React.Component {
  }
 
   render() {
-    return (
+    let { twitter, linkedin, interest, facebook, name, about} = this.props;
+     return (
       <Card
       raised
       >
@@ -40,18 +41,18 @@ export default class ProfileCardFront extends React.Component {
          
         </Card.Content>
         <Card.Content extra>
-           <Card.Header>{this.props.name}</Card.Header>
+           <Card.Header>{name}</Card.Header>
           <Card.Description style={{marginBottom: ".75em"}}>
-          ABOUT
+          {about}
           </Card.Description>
           <Card.Content>
          
               <p><strong>Instagram:</strong>@HANDLE_HERE</p>
-              {/* {twitter}
+              {twitter}
               {linkedin}
-              {user_id}
+           
               {interest}
-              {facebook} */}
+              {facebook}
               
           </Card.Content>
           <div className="ui two buttons">
