@@ -59,7 +59,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-export default function SignInSide() {
+export default function SignInSide(props) {
   const classes = useStyles();
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -84,9 +84,10 @@ export default function SignInSide() {
             console.log(response);
             localStorage.setItem("jwt", response.jwt);
             localStorage.setItem("user_id", response.user.id);
+            props.history.push("/");
            
           })
-          
+          // return <Redirect to='/' />
           
     }
   

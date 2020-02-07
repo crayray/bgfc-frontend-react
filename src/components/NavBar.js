@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+
 import { NavLink, Link } from "react-router-dom";
 import {
   Button,
@@ -27,7 +29,7 @@ class DesktopContainer extends Component {
   // constructor(props){
   //   super(props);
   //   console.log(props)
-  //   this.state = { user_id: props.user_id };
+  //   this.state = { user_id: null};
     
   // }
 
@@ -43,11 +45,15 @@ class DesktopContainer extends Component {
 
   handleLogOut = () => {
     window.localStorage.clear()
-    this.props.history.push("/");
+    this.setState({
+      user_id: null
+    })
+    return <Redirect to='/' />
   }
   render() {
     const { children } = this.props;
     const { fixed } = this.state;
+ 
 
 
     return (
