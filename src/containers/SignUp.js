@@ -46,14 +46,13 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-export default function SignUp() {
+export default function SignUp(props) {
   const classes = useStyles();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = event => {
     event.preventDefault();
-    // console.log("this works")
     fetch("http://localhost:4000/users", {
         method: "POST",
         headers: {
@@ -72,6 +71,8 @@ export default function SignUp() {
         .then(response => {
             console.log(response);
             localStorage.setItem("jwt", response.jwt);
+            localStorage.setItem("user_id", response.user.id);
+            props.history.push("/create-profile");
           });
     }
 

@@ -10,6 +10,7 @@ import SignUp from "./containers/SignUp"
 // import PrivateRoute from "./components/PrivateRoute"
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import CreateProfileForm from "./components/CreateProfileForm";
 
 // import DesktopContainer from './components/NavBar'
 
@@ -74,6 +75,7 @@ class App extends React.Component {
           <PrivateRoute path='/members' component={MembersLayout} />
           <Route exact path="/login" component={SignInSide} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/create-profile" component={CreateProfileForm} />
         </Switch>
       </Router>
     );

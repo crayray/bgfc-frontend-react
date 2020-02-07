@@ -11,7 +11,8 @@ import CardContainer from './CardContainer';
 export default class MembersLayout extends React.Component {
         state = {
             profiles: [],
-            searchField: ""
+            searchField: "",
+            interestFilter: " "
         }
     componentDidMount() {
         fetch('http://localhost:4000/profiles', {
@@ -37,18 +38,39 @@ export default class MembersLayout extends React.Component {
       
     }
 
-    render() {
-        const { profiles } = this.state;
 
-        const filteredProfiles = this.state.profiles.filter(profile => {
+    onDropdownChange = (e, {value, text}) => {
+      this.setState({
+        interestFilter: value
+      })
+      console.log(value);
+      
+    }
+
+    render() {
+        
+
+        const namefilteredProfiles = this.state.profiles.filter(profile => {
           return profile.name.toLowerCase().includes(this.state.searchField.toLowerCase());
-          // return profile.name.toLowerCase() == this.state.searchField.toLowerCase()
        })
+
+
+// Need to work on the logic for the dropdown filter. Hopefully once I get the filter working, it will conditionally render the props to the card Container
+//based on which one was selected. 
+
+      //  const interestFilteredProfiles = this.state.profiles.filter(profile => {
+      //    return profile.interest1.includes(this.state.interestFilter)
+      //  })
+       
+
+      //  (this.state.interestFilter === null) ? 
+      //   <CardContainer profiles={namefilteredProfiles} /> : <CardContainer profiles={interestFilteredProfiles}  />
+      
         return (
             <div>
               <NavBar />  
              {/* <CreateProfileForm /> */}
-             <SearchBar onSearchChange={this.onSearchChange}/>
+             <SearchBar onSearchChange={this.onSearchChange} onDropdownChange={this.onDropdownChange}/>
               <Segment style={{ padding: "8em 0em" }} vertical>
           <Grid container>
             <Grid.Row>
@@ -58,7 +80,7 @@ export default class MembersLayout extends React.Component {
             </Grid.Row>
           </Grid>
         </Segment>
-        <CardContainer profiles={filteredProfiles} />
+        <CardContainer profiles={namefilteredProfiles} />
             </div>
         )
     }
