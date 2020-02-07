@@ -11,6 +11,7 @@ import SignUp from "./containers/SignUp"
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import CreateProfileForm from "./components/CreateProfileForm";
+import NavBar from "./components/NavBar";
 
 // import DesktopContainer from './components/NavBar'
 
@@ -18,7 +19,7 @@ class App extends React.Component {
 
   state= {
     jwt:"",
-    user_id: null
+    user_id: ""
   }
   componentDidMount() {
     // fetch('http://localhost:4000/profiles/1', {
@@ -61,12 +62,8 @@ class App extends React.Component {
     var hist = createBrowserHistory();
      
     return (
-      // <HomepageLayout/>
-      // {/* <DesktopContainer/> */}
-      //   <SignInSide/>
-      //   {/* <Button type="primary">Button</Button> */}
-      //   {/* <img src={`http://localhost:4000/${this.state.avatar}`}/> */}
       <Router history={hist}>
+       <NavBar user_id={this.state.user_id} />
         <Switch>
           <Route exact path="/" component={HomepageLayout} />
           <Route exact path="/about" component={AboutLayout} />
@@ -78,6 +75,7 @@ class App extends React.Component {
           <Route exact path="/create-profile" component={CreateProfileForm} />
         </Switch>
       </Router>
+      
     );
   }
 }

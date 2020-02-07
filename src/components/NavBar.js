@@ -22,6 +22,13 @@ const getWidth = () => {
 class DesktopContainer extends Component {
   state = {};
 
+  constructor(props){
+    super(props);
+    console.log(props)
+    this.state = { user_id: props.user_id };
+    
+  }
+
   hideFixedMenu = () => this.setState({ fixed: false });
   showFixedMenu = () => this.setState({ fixed: true });
 
@@ -29,6 +36,11 @@ class DesktopContainer extends Component {
     const { children } = this.props;
     const { fixed } = this.state;
 
+    // if (this.props.user_id !== null){
+    //    return <Button>Logout</Button>
+    //    }else {
+    //     return <Button> Login</Button>
+    //    }
     return (
       <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
         <Visibility
@@ -83,10 +95,12 @@ class DesktopContainer extends Component {
                   </Button>
                 </NavLink>
               </Menu.Item>
+              <Menu.Item>
+              {(this.state.user_id === "undefined")? (<Button> Login</Button>)  :(<Button>Logout</Button>) }
+              </Menu.Item>
             </Container>
           </Menu>
 
-          {/* </Segment> */}
         </Visibility>
 
         {children}

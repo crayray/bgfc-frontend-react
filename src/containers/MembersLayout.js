@@ -47,6 +47,8 @@ export default class MembersLayout extends React.Component {
       
     }
 
+  
+
     render() {
         
 
@@ -62,6 +64,12 @@ export default class MembersLayout extends React.Component {
       //    return profile.interest1.includes(this.state.interestFilter)
       //  })
        
+      //Morning attempt:
+      // const interestFilteredProfiles = this.state.profiles.filter(profile => {
+      //    if(profile.interest1.toLowerCase() === this.state.interestFilter.toLowerCase()){
+      //      return profile
+      //    }
+      // })
 
       //  (this.state.interestFilter === null) ? 
       //   <CardContainer profiles={namefilteredProfiles} /> : <CardContainer profiles={interestFilteredProfiles}  />
