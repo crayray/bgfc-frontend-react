@@ -86,7 +86,7 @@ export default class CreateProfileForm extends Component {
     })
       .then(response => response.json())
       .then(response => this.uploadFile(this.state.avatar, response));
-      
+      this.props.history.push("/members");
   };
 
 
