@@ -87,8 +87,8 @@ export default function SignInSide(props) {
             props.history.push("/");
            
           })
-          // return <Redirect to='/' />
           
+          // return <Route exact path="/" />
     }
   
    

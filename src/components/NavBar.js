@@ -111,7 +111,7 @@ class DesktopContainer extends Component {
                 </NavLink>
               </Menu.Item>
               <Menu.Item>
-              {(this.state.user_id === null)? ( <NavLink to="/login"><Button> Login/Sign Up</Button></NavLink>)  :(<Button onClick={this.handleLogOut}>Logout</Button>) }
+              {(this.state.user_id === null)? ( <NavLink to="/login"><Button> Login/Sign Up</Button></NavLink>)  :(<NavLink to="/"><Button onClick={this.handleLogOut}>Logout</Button></NavLink>) }
               </Menu.Item>
             </Container>
           </Menu>
