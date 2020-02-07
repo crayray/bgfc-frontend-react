@@ -76,7 +76,7 @@ export default class MembersLayout extends React.Component {
       
         return (
             <div>
-              <NavBar />  
+              {/* <NavBar />   */}
              {/* <CreateProfileForm /> */}
              <SearchBar onSearchChange={this.onSearchChange} onDropdownChange={this.onDropdownChange}/>
               <Segment style={{ padding: "8em 0em" }} vertical>

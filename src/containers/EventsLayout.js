@@ -62,7 +62,7 @@ export default class EventsLayout extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        {/* <NavBar /> */}
         <Segment style={{ padding: "8em 0em" }} vertical>
           <Grid container>
             <Grid.Row>

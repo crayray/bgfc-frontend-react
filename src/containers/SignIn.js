@@ -58,6 +58,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+
 export default function SignInSide() {
   const classes = useStyles();
   const [password, setPassword] = useState("");
@@ -83,12 +84,12 @@ export default function SignInSide() {
             console.log(response);
             localStorage.setItem("jwt", response.jwt);
             localStorage.setItem("user_id", response.user.id);
-            setIsLoggedIn(true)
+           
           })
           
           
     }
-
+  
    
 
   return (
@@ -103,7 +104,7 @@ export default function SignInSide() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <form className={classes.form} onSubmit={event => handleLogin(event)} >
+          <form className={classes.form} onSubmit={handleLogin} >
             <TextField
               variant="outlined"
               margin="normal"

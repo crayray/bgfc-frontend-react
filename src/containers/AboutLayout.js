@@ -4,7 +4,7 @@ import NavBar from "../components/NavBar";
 export default function AboutLayout() {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <div
         style={{
           backgroundColor: "green"

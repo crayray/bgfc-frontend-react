@@ -19,7 +19,8 @@ class App extends React.Component {
 
   state= {
     jwt:"",
-    user_id: ""
+    user_id: "",
+    isLoggedIn: false
   }
   componentDidMount() {
     // fetch('http://localhost:4000/profiles/1', {
@@ -56,14 +57,18 @@ class App extends React.Component {
       }
     )
   }
+
+
   
+
+
 
   render() {
     var hist = createBrowserHistory();
      
     return (
       <Router history={hist}>
-       <NavBar user_id={this.state.user_id} />
+       <NavBar user_id={this.state.user_id}  />
         <Switch>
           <Route exact path="/" component={HomepageLayout} />
           <Route exact path="/about" component={AboutLayout} />
@@ -71,7 +76,8 @@ class App extends React.Component {
           <Route exact path="/events" component={EventsLayout} />
           <PrivateRoute path='/members' component={MembersLayout} />
           <Route exact path="/login" component={SignInSide} />
-          <Route exact path="/signup" component={SignUp} />
+          {/* // component={SignInSide} handleLogin={this.handleLogin}/> */}
+          <Route exact path="/signup" component={SignUp}  />
           <Route exact path="/create-profile" component={CreateProfileForm} />
         </Switch>
       </Router>

@@ -88,7 +88,7 @@ class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
-          <NavBar />
+          {/* <NavBar /> */}
           <Segment
             inverted
             textAlign="center"
