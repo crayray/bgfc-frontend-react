@@ -72,6 +72,7 @@ export class RsvpModal extends React.Component {
         </Modal.Content>
         <Modal.Actions>
           {!this.props.rsvp ? (
+           <div>
             <Button
               color="olive"
               icon
@@ -85,6 +86,17 @@ export class RsvpModal extends React.Component {
               RSVP for this event
               <Icon name="right chevron" />
             </Button>
+            <Button
+            color="olive"
+            icon
+            close
+            labelPosition="right"
+              onClick={() => this.props.onClose()}
+            >
+            Close 
+            <Icon name="right close" />
+            </Button>
+            </div>
           ) : (
             <Button
               color="olive"
