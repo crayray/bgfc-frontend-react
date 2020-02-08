@@ -24,8 +24,8 @@ const EventMapWithMarker = withScriptjs(
     <GoogleMap
       defaultZoom={13}
       defaultCenter={{
-        lat: 40.7484445, // latitude for the center of the map
-        lng: -73.9878584 // longitude for the center of the map
+        lat: 30.267593, // latitude for the center of the map
+        lng:  -97.742508 // longitude for the center of the map
       }}
       defaultOptions={{
         disableDefaultUI: true, // disable default map UI
