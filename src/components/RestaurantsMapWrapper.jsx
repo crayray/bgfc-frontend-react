@@ -3,7 +3,6 @@ import * as React from 'react'
 import { render } from 'react-dom'
 
 // Import Google Map component
-import RestaurantsMapWithMarker from './RestaurantsMapWithMarker'
 import RestaurantstMapWithMarker from './RestaurantsMapWithMarker'
 
 // Some default styles
