@@ -3,6 +3,7 @@ import UpcomingEvent from "../components/UpcomingEvent";
 import { Container, Segment, Card, Grid, Header } from "semantic-ui-react";
 import NavBar from "../components/NavBar";
 import { events } from "../data/events";
+// import RestaurantsMapWrapper from "../components/RestaurantsMapWrapper"
 
 export default class EventsLayout extends Component {
     state= {

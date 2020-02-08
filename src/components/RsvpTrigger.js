@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Header, Image, Modal, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+// import RestaurantsMapWrapper from "./RestaurantsMapWrapper"
 
 
 
@@ -51,6 +52,7 @@ export default class RsvpTrigger extends React.Component {
 export class RsvpModal extends React.Component {
   render() {
     return (
+      
       <Modal
         open={this.props.open}
         trigger={
