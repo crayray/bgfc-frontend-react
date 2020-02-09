@@ -3,42 +3,10 @@ import { render } from "react-dom";
 // Import Google Map component
 import RestaurantsMapWithMarker from "./RestaurantsMapWithMarker";
 
-const restaurants = [
-  {
-    name: "Casa Columbia",
-    lat: 30.260846,
-    lng: -97.714576,
-    desc: "A columbian place"
-  },
-  {
-    name: "Usta Kababgy",
-    lat: 30.365631,
-    lng: -97.695010,
-    desc: "A Turkish place"
-  },
-  {
-    name: "Aster's Ethiopian",
-    lat: 30.287478,
-    lng: -97.725037,
-    desc: "An Ethiopian place"
-  },
-  {
-    name: "Himalaya Kosheli",
-    lat: 30.432962,
-    lng: -97.770067,
-    desc: "A Nepali place"
-  },
-  {
-    name: "Sassy's Vegetarian SOUL Food",
-    lat: 30.264578,
-    lng:  -97.727277,
-    desc: "A vegetarian Soul food place"
-  }
-];
 
 // Some default styles
 const styles = {
-  width: "80%",
+  width: "100%",
   height: "536px"
 };
 
@@ -52,7 +20,7 @@ class RestaurantsMapWrapper extends React.PureComponent {
       isInfoboxVisible: false,
       markerLang: 0,
       markerLat: 0,
-      restaurants: restaurants
+      restaurants: props.restaurants
     };
   }
 
