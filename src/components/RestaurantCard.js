@@ -16,7 +16,7 @@ export default function RestaurantCard({ name, desc, cuisine, yelp }) {
       </Card.Content>
     </Card> }
     >
-           <Popup.Content >Click me for my Yelp page!</Popup.Content>
+           <Popup.Content >Click me to see {name}'s' Yelp page!</Popup.Content>
  
     </Popup>
   );
