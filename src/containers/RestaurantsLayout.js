@@ -54,7 +54,11 @@ export default class RestaurantsLayout extends React.Component {
     state = {
       restaurants: restaurants,
       searchField: "",
-      cuisineFilter: " "
+      cuisineFilter: " ",
+      selectedRestaurant: "",
+      markerLat: "",
+      infoboxMessage: ""
+
     }
   
     onSearchChange= event => {
@@ -62,10 +66,29 @@ export default class RestaurantsLayout extends React.Component {
       this.setState({
         searchField: event.target.value
       })
- 
-      
       
     }
+    
+    handleSelect = (message, lang, lat) => {
+      console.log(message)
+      console.log(lang)
+      console.log(lat)
+    }
+
+
+    // handleMarkerClick = (message, lang, lat ) => {
+    //   this.setState({
+    //     infoboxMessage: message, // Message shown in info window
+    //     isInfoboxVisible: !this.state.isInfoboxVisible, // Show info window
+    //     markerLang: lang + 0.006, // Y coordinate for positioning info window
+    //     markerLat: lat - 0.0004, // X coordinate for positioning info window
+    //     selectedRestaurant: message
+
+    //   })
+    // }
+  
+  
+
   render() {
     const cuisineFilteredRestuarants = this.state.restaurants.filter(restaurant => {
       return restaurant.cuisine.toLowerCase().includes(this.state.searchField.toLowerCase());
@@ -73,12 +96,11 @@ export default class RestaurantsLayout extends React.Component {
     return (
       <Container style={{ marginTop: "5em" }}>
     <Segment raised style={{ overflow: "auto", maxHeight: "45em" }}>
-      {/* <RestaurantMenu /> */}
-      <Grid>
+      <Grid stackable columns={2}>
         <Grid.Row>
           <Grid.Column width={10}>
           <Header>Checkout for restaurants near you:</Header> 
-            <RestaurantsMapWrapper restaurants={this.state.restaurants} />
+            <RestaurantsMapWrapper restaurants={this.state.restaurants} handleSelect={this.handleMarkerSelect}/>
           </Grid.Column>
           <Grid.Column width={6}>
           <Header>Search our list of restaurants by cuisine:</Header>

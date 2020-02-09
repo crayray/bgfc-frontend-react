@@ -1,9 +1,15 @@
-import { Button, Select, Form } from "semantic-ui-react";
-import { DirectUpload } from 'activestorage';
-
+import {
+  Button,
+  Form,
+  Grid,
+  Segment,
+  Container,
+  Header
+} from "semantic-ui-react";
+import { DirectUpload } from "activestorage";
+import OopsProfile from "./OopsProfile"
 
 import React, { Component } from "react";
-
 
 const options = [
   { key: "a", text: "Activism", value: "Activism" },
@@ -40,7 +46,8 @@ export default class CreateProfileForm extends Component {
         // console.log(response.id);
         this.setState({
           jwt: token,
-          user_id: response.id
+          user_id: response.id,
+          profile: response.profile
         });
       });
   }
@@ -57,7 +64,7 @@ export default class CreateProfileForm extends Component {
     }
   };
 
-// handleOnChange = (e, { value }) => this.setState({ value })
+  // handleOnChange = (e, { value }) => this.setState({ value })
 
   handleSubmit = event => {
     event.preventDefault();
@@ -86,116 +93,128 @@ export default class CreateProfileForm extends Component {
     })
       .then(response => response.json())
       .then(response => this.uploadFile(this.state.avatar, response));
-      this.props.history.push("/members");
+    this.props.history.push("/members");
   };
 
-
-  uploadFile= (file, profile) => {
-    const upload = new DirectUpload(file, 'http://localhost:4000/rails/active_storage/direct_uploads')
-    upload.create((error, blob) => {
-        if (error) {
-            console.log(error)
-        }else {
-            
-            fetch(`http://localhost:4000/profiles/${profile.id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type' : 'application/json',
-                    'Accept' : 'application/json'
-                },
-                body: JSON.stringify({avatar: blob.signed_id})
-            })
-            .then(response => response.json())
-            .then(result => console.log(result))
-        }
-    })
-  }
-  render() {
-    return (
-      <div>
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Field>
-            <label>Name</label>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={this.state.name}
-              onChange={this.handleOnChange}
-            />
-          </Form.Field>
-          <Form.Field>
-            <label>About</label>
-            <input
-              type="text"
-              name="about"
-              placeholder="About"
-              value={this.state.about}
-              onChange={this.handleOnChange}
-            />
-          </Form.Field>
-
-          <Form.Select
-              fluid
-              label="Select an Interest"
-              name="interest"
-              options={options}
-              placeholder="Select an Interest"
-
-              onChange={(e, {value, text}) => {
-                this.setState({
-                  interest1: value
-                })
-              }}
-            />
-          <Form.Field>
-            <label>Instagram</label>
-            <input
-              type="text"
-              name="instagram"
-              placeholder="Instagram handle"
-              value={this.state.instagram}
-              onChange={this.handleOnChange}
-            />
-          </Form.Field>
-          <Form.Field>
-            <Form.Field>
-              <label>Twitter</label>
-              <input
-                type="text"
-                name="twitter"
-                placeholder="Twitter Hnadle"
-                value={this.state.twitter}
-                onChange={this.handleOnChange}
-              />
-            </Form.Field>
-            <label>Facebook</label>
-            <input
-              type="text"
-              name="facebook"
-              placeholder="Facebook profile"
-              value={this.state.facebook}
-              onChange={this.handleOnChange}
-            />
-          </Form.Field>
-          <Form.Field>
-            <label>LinkedIn</label>
-            <input
-              type="text"
-              name="linkedin"
-              placeholder="LinkedIn profile"
-              value={this.state.linkedin}
-              onChange={this.handleOnChange}
-            />
-          </Form.Field>
-
-          <Form.Field>
-            <label>Upload your Profile photo:</label>
-            <input type="file" name="avatar" onChange={this.handleOnChange} />
-          </Form.Field>
-          <Form.Field control={Button}>Create my profile</Form.Field>
-        </Form>
-      </div>
+  uploadFile = (file, profile) => {
+    const upload = new DirectUpload(
+      file,
+      "http://localhost:4000/rails/active_storage/direct_uploads"
     );
+    upload.create((error, blob) => {
+      if (error) {
+        console.log(error);
+      } else {
+        fetch(`http://localhost:4000/profiles/${profile.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify({ avatar: blob.signed_id })
+        })
+          .then(response => response.json())
+          .then(result => console.log(result));
+      }
+    });
+  };
+  render() {
+
+    if (this.state.profile === null) {
+    return (
+      <Container style={{ marginTop: "75px" }}>
+        <Grid
+          textAlign="center"
+          style={{ height: "100vh" }}
+          verticalAlign="middle"
+        >
+          <Grid.Column style={{ maxWidth: 450 }}>
+            <Form size="large" onSubmit={this.handleSubmit}>
+              <Segment>
+                <Form.Input
+                  icon="user circle olive"
+                  name="name"
+                  placeholder="Your name here"
+                  value={this.state.name}
+                  onChange={this.handleOnChange}
+                  type="text"
+                  label="Name"
+                />
+
+                <Form.Input
+                  icon="quote right olive"
+                  name="about"
+                  label="Share a short blurb about yourself"
+                  placeholder="A blurb about me...."
+                  value={this.state.about}
+                  onChange={this.handleOnChange}
+                />
+              </Segment>
+              <Segment>
+                <Header>
+                  Share your interests and Social media details so other members
+                  can find you:
+                </Header>
+                <Form.Select
+                  fluid
+                  label="Select an Interest"
+                  name="interest"
+                  options={options}
+                  placeholder="Select an Interest"
+                  onChange={(e, { value, text }) => {
+                    this.setState({
+                      interest1: value
+                    });
+                  }}
+                />
+
+                <Form.Input
+                  icon="instagram olive"
+                  name="instagram"
+                  placeholder="Your Instagram handle"
+                  value={this.state.instagram}
+                  onChange={this.handleOnChange}
+                  type="text"
+                  label="Instagram"
+                />
+
+                <Form.Input
+                  icon="twitter olive"
+                  name="twitter"
+                  placeholder="Your Twitter handle"
+                  value={this.state.twitter}
+                  onChange={this.handleOnChange}
+                  type="text"
+                  label="Twitter"
+                />
+
+                <Form.Input
+                  icon="facebook olive"
+                  name="facebook"
+                  placeholder="Your Facebook name"
+                  value={this.state.facebook}
+                  onChange={this.handleOnChange}
+                  type="text"
+                  label="Facebook"
+                />
+              </Segment>
+              <Segment>
+                <Form.Field>
+                  <label>Upload your Profile photo:</label>
+                  <input
+                    type="file"
+                    name="avatar"
+                    onChange={this.handleOnChange}
+                  />
+                </Form.Field>
+                <Form.Field control={Button}>Create my profile</Form.Field>
+              </Segment>
+            </Form>
+          </Grid.Column>
+        </Grid>
+      </Container>
+    )}else{
+      return (<OopsProfile />)
+    }
   }
 }

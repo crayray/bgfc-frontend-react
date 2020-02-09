@@ -1,7 +1,8 @@
 // GoogleMapWithMarker.jsx
 
 // Import React
-import * as React from 'react'
+import * as React from "react";
+import { Image, Card, Segment, Grid } from "semantic-ui-react";
 
 // Import necessary components for React Google Maps
 import {
@@ -10,10 +11,10 @@ import {
   GoogleMap,
   Marker,
   InfoWindow
-} from 'react-google-maps'
+} from "react-google-maps";
 
 // Import custom styles to customize the style of Google Map
-const styles = require('./GoogleMapStyles.json')
+const styles = require("./GoogleMapStyles.json");
 
 // Import custom icon for map marker
 // You can use this if you need to support IE11 and lower.
@@ -26,7 +27,7 @@ const RestaurantsMapWithMarker = withScriptjs(
       defaultZoom={11}
       defaultCenter={{
         lat: 30.293818, // latitude for the center of the map
-        lng:  -97.734308 // longitude for the center of the map
+        lng: -97.734308 // longitude for the center of the map
       }}
       defaultOptions={{
         disableDefaultUI: true, // disable default map UI
@@ -37,39 +38,25 @@ const RestaurantsMapWithMarker = withScriptjs(
         styles: styles // change default map styles
       }}
     >
-
-      {props.restaurants.map( (restaurant, index) => (
-        <Marker 
-            key= {index}
-            icon={{
-              url:
-            "http://localhost:3000/Brown-Girls-Food-Club-Logo-01.svg"
-            }}
-            position={{
-          lat: restaurant.lat,
-          lng: restaurant.lng
-        }}
+      {props.restaurants.map((restaurant, index) => (
+        <Marker
+          key={index}
+          icon={{
+            url: "http://localhost:3000/Brown-Girls-Food-Club-Logo-01.svg"
+          }}
+          position={{
+            lat: restaurant.lat,
+            lng: restaurant.lng
+          }}
+          onClick={() =>
+            props.handleMarkerClick(
+              restaurant.name,
+              restaurant.lat,
+              restaurant.lng
+            )
+          }
         />
-        )
-      )}
-      {/* <Marker
-       icon={{
-          url:
-            "http://localhost:3000/Brown-Girls-Food-Club-Logo-01.svg" // This may not work in <=IE11
-        }}
-        
-        position={{
-          lat: 30.260846,
-          lng: -97.714576
-        }}
-        onClick={(message, lang, lat) =>
-          props.handleMarkerClick(
-            'Custom Google Map marker with infobox!',
-            30.260846,
-            -97.714576
-          )
-        } // Get the data that will be used for InfoWindow.
-      /> */}
+      ))}
 
       {props.isInfoboxVisible && (
         <InfoWindow
@@ -79,15 +66,28 @@ const RestaurantsMapWithMarker = withScriptjs(
           }}
           onCloseClick={() => props.handleInfoboxClick()}
         >
-          <div>
-            <h4>{props.infoboxMessage}</h4>
-          </div>
+        {/* <Card> */}
+        <Segment>
+          <Grid>
+            {/* <Grid.Row> */}
+            <Grid.Column >
+                <Image
+                  size="mini"
+                  src="http://localhost:3000/Brown-Girls-Food-Club-Logo-01.svg"
+                  floated="left"
+                />
+                 <h4>{props.infoboxMessage}</h4>
+                </Grid.Column>
+               
+            {/* </Grid.Row> */}
+          </Grid>
+          </Segment>
+          {/* </Card> */}
         </InfoWindow>
       )}
- 
     </GoogleMap>
   ))
-)
+);
 
 // Export Google Map component
-export default RestaurantsMapWithMarker
+export default RestaurantsMapWithMarker;
