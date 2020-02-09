@@ -21,6 +21,18 @@ const restaurants = [
     lat: 30.287478,
     lng: -97.725037,
     desc: "An Ethiopian place"
+  },
+  {
+    name: "Himalaya Kosheli",
+    lat: 30.432962,
+    lng: -97.770067,
+    desc: "A Nepali place"
+  },
+  {
+    name: "Sassy's Vegetarian SOUL Food",
+    lat: 30.264578,
+    lng:  -97.727277,
+    desc: "A vegetarian Soul food place"
   }
 ];
 
