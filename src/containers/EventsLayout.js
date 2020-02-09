@@ -61,6 +61,7 @@ export default class EventsLayout extends Component {
       )
     }
   render() {
+
     return (
       <div>
         {/* <NavBar /> */}

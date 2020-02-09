@@ -52,10 +52,24 @@ const restaurants = [
 export default class RestaurantsLayout extends React.Component {
 
     state = {
-      restaurants: restaurants
+      restaurants: restaurants,
+      searchField: "",
+      cuisineFilter: " "
     }
   
+    onSearchChange= event => {
+      
+      this.setState({
+        searchField: event.target.value
+      })
+ 
+      
+      
+    }
   render() {
+    const cuisineFilteredRestuarants = this.state.restaurants.filter(restaurant => {
+      return restaurant.cuisine.toLowerCase().includes(this.state.searchField.toLowerCase());
+   })
     return (
       <Container style={{ marginTop: "5em" }}>
     <Segment raised style={{ overflow: "auto", maxHeight: "45em" }}>
@@ -68,8 +82,8 @@ export default class RestaurantsLayout extends React.Component {
           </Grid.Column>
           <Grid.Column width={6}>
           <Header>Search our list of restaurants by cuisine:</Header>
-          <RestaurantMenu />
-           {this.state.restaurants.map((restaurant, index) => (
+          <RestaurantMenu onSearchChange={this.onSearchChange}/>
+           {cuisineFilteredRestuarants.map((restaurant, index) => (
              <RestaurantCard 
               href="#restaurants"
               key={index}

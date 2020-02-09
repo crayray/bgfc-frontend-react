@@ -13,12 +13,11 @@ export default class DataMenu extends Component {
         <Grid>
         <Grid.Row>
         <Grid.Column width={6} >
-           {/* <Header>Search for restaurants near you:</Header>  */}
         </Grid.Column>
           <Grid.Column width={1}>
           <Menu.Menu position='right' style={{textAlign: "right"}}>
           <Menu.Item>
-            <Input icon='search' placeholder='Search...' />
+            <Input onChange={this.props.onSearchChange} icon='search' placeholder='Search...' />
           </Menu.Item>
         </Menu.Menu>
           </Grid.Column>
