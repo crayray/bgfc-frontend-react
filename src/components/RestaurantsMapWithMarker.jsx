@@ -23,10 +23,10 @@ const styles = require('./GoogleMapStyles.json')
 const RestaurantsMapWithMarker = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
-      defaultZoom={13}
+      defaultZoom={11}
       defaultCenter={{
-        lat: 30.267593, // latitude for the center of the map
-        lng:  -97.742508 // longitude for the center of the map
+        lat: 30.293818, // latitude for the center of the map
+        lng:  -97.734308 // longitude for the center of the map
       }}
       defaultOptions={{
         disableDefaultUI: true, // disable default map UI

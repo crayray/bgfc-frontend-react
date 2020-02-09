@@ -15,12 +15,18 @@ const restaurants = [
     lat: 30.365631,
     lng: -97.695010,
     desc: "A Turkish place"
+  },
+  {
+    name: "Aster's Ethiopian",
+    lat: 30.287478,
+    lng: -97.725037,
+    desc: "An Ethiopian place"
   }
 ];
 
 // Some default styles
 const styles = {
-  width: "100%",
+  width: "80%",
   height: "536px"
 };
 
