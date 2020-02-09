@@ -20,7 +20,7 @@ const styles = require('./GoogleMapStyles.json')
 // const mapMarker = require('./GoogleMapMarker.svg')
 
 // Google Map component
-const EventMapWithMarker = withScriptjs(
+const RestaurantsMapWithMarker = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
       defaultZoom={13}
@@ -54,13 +54,13 @@ const EventMapWithMarker = withScriptjs(
           lat: 30.260846,
           lng: -97.714576
         }}
-        // onClick={(message, lang, lat) =>
-        //   props.handleMarkerClick(
-        //     'Custom Google Map marker with infobox!',
-        //     30.260846,
-        //     -97.714576
-        //   )
-        // } // Get the data that will be used for InfoWindow.
+        onClick={(message, lang, lat) =>
+          props.handleMarkerClick(
+            'Custom Google Map marker with infobox!',
+            30.260846,
+            -97.714576
+          )
+        } // Get the data that will be used for InfoWindow.
       />
 
       {props.isInfoboxVisible && (
@@ -82,4 +82,4 @@ const EventMapWithMarker = withScriptjs(
 )
 
 // Export Google Map component
-export default EventMapWithMarker
+export default RestaurantsMapWithMarker

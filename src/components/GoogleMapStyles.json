@@ -16,7 +16,7 @@
           "saturation": 36
         },
         {
-          "color": "#000000"
+          "color": "#E2DEB4"
         },
         {
           "lightness": 40
@@ -79,7 +79,7 @@
       "elementType": "labels.text.fill",
       "stylers": [
         {
-          "color": "#838383"
+          "color": "#E2DEB4"
         }
       ]
     },
@@ -106,10 +106,10 @@
       "elementType": "geometry",
       "stylers": [
         {
-          "color": "#151516"
+          "color": "#026E5D"
         },
         {
-          "lightness": "0"
+          "lightness": "-25"
         }
       ]
     },
@@ -118,10 +118,10 @@
       "elementType": "geometry",
       "stylers": [
         {
-          "color": "#000000"
+          "color": "#026E5D"
         },
         {
-          "lightness": 21
+          "lightness": -45
         },
         {
           "visibility": "on"
@@ -136,7 +136,7 @@
           "visibility": "off"
         },
         {
-          "hue": "#ff0000"
+          "hue": "#026E5D"
         }
       ]
     },
@@ -163,7 +163,7 @@
       "elementType": "geometry.fill",
       "stylers": [
         {
-          "color": "#6e6e6e"
+          "color": "#BAAD9D"
         },
         {
           "lightness": "0"
@@ -184,7 +184,7 @@
       "elementType": "geometry",
       "stylers": [
         {
-          "color": "#000000"
+          "color": "#BAAD9D"
         },
         {
           "lightness": 18
@@ -196,7 +196,7 @@
       "elementType": "geometry.fill",
       "stylers": [
         {
-          "color": "#575757"
+          "color": "#E2DEB4"
         }
       ]
     },
@@ -235,7 +235,7 @@
       "elementType": "labels.text.fill",
       "stylers": [
         {
-          "color": "#5f5f5f"
+          "color": "#B2D1D9"
         },
         {
           "visibility": "on"
@@ -256,10 +256,10 @@
       "elementType": "geometry",
       "stylers": [
         {
-          "color": "#717171"
+          "color": "#BAAD9D"
         },
         {
-          "lightness": 19
+          "lightness": 0
         }
       ]
     },
@@ -268,10 +268,10 @@
       "elementType": "geometry",
       "stylers": [
         {
-          "color": "#000000"
+          "color": "#5BC9E9"
         },
         {
-          "lightness": 17
+          "lightness": 19
         }
       ]
     }
