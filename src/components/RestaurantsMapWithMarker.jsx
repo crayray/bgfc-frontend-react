@@ -37,17 +37,22 @@ const RestaurantsMapWithMarker = withScriptjs(
         styles: styles // change default map styles
       }}
     >
+
+      {props.restaurants.map( (restaurant, index) => (
+        <Marker 
+            key= {index}
+            icon={{
+              url:
+            "http://localhost:3000/Brown-Girls-Food-Club-Logo-01.svg"
+            }}
+            position={{
+          lat: restaurant.lat,
+          lng: restaurant.lng
+        }}
+        />
+        )
+      )}
       {/* <Marker
-        icon={{
-          url:
-            "http://localhost:3000/Brown-Girls-Food-Club-Logo-01.svg" // This may not work in <=IE11
-        }}
-        position={{
-          lat: 30.267593, // latitude to position the marker
-          lng:  -97.742508 // longitude to position the marker
-        }}
-      /> */}
-      <Marker
        icon={{
           url:
             "http://localhost:3000/Brown-Girls-Food-Club-Logo-01.svg" // This may not work in <=IE11
@@ -64,7 +69,7 @@ const RestaurantsMapWithMarker = withScriptjs(
             -97.714576
           )
         } // Get the data that will be used for InfoWindow.
-      />
+      /> */}
 
       {props.isInfoboxVisible && (
         <InfoWindow
