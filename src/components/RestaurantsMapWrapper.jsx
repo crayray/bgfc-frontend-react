@@ -7,7 +7,7 @@ import RestaurantsMapWithMarker from "./RestaurantsMapWithMarker";
 // Some default styles
 const styles = {
   width: "100%",
-  height: "536px"
+  height: "700px"
 };
 
 // Wrapper with Google Map component

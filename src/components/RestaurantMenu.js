@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Input, Menu, Grid } from 'semantic-ui-react'
+import { Input, Menu, Grid, Header } from 'semantic-ui-react'
 
 export default class DataMenu extends Component {
   state = { activeItem: 'home' }
@@ -12,10 +12,10 @@ export default class DataMenu extends Component {
     return (
         <Grid>
         <Grid.Row>
-        <Grid.Column width={8} >
-            Search for restaurants near you:
+        <Grid.Column width={6} >
+           {/* <Header>Search for restaurants near you:</Header>  */}
         </Grid.Column>
-          <Grid.Column width={8}>
+          <Grid.Column width={1}>
           <Menu.Menu position='right' style={{textAlign: "right"}}>
           <Menu.Item>
             <Input icon='search' placeholder='Search...' />
