@@ -122,11 +122,13 @@ export default class CreateProfileForm extends Component {
   render() {
     if (this.state.profile === null) {
       return (
+        <div className="page-container bg" style={{ backgroundImage: 'url("http://localhost:3000/BGFC-Story-20.svg")'}}>
         <Container className="form-container">
           <Grid
             textAlign="center"
             // style={{ height: "100vh" }}
             // verticalAlign="middle"
+            
           >
             <Grid.Column style={{ maxWidth: 1000 }}>
               <Form onSubmit={this.handleSubmit}>
@@ -233,6 +235,7 @@ export default class CreateProfileForm extends Component {
             </Grid.Column>
           </Grid>
         </Container>
+      //  </div>
       );
     } else {
       return <OopsProfile />;
