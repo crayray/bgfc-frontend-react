@@ -94,7 +94,8 @@ export default class RestaurantsLayout extends React.Component {
       return restaurant.cuisine.toLowerCase().includes(this.state.searchField.toLowerCase());
    })
     return (
-      <Container style={{ marginTop: "5em" }}>
+      <div style={{backgroundImage: 'url("http://localhost:3000/logos/bgfc-logo.svg")'}}>
+      <Container style={{ paddingTop: "5em" }}>
     <Segment raised style={{ overflow: "auto", maxHeight: "45em" }}>
       <Grid stackable columns={2}>
         <Grid.Row>
@@ -120,6 +121,7 @@ export default class RestaurantsLayout extends React.Component {
       </Grid>
     </Segment>
   </Container>
+  </div>
     )
   }
 }
