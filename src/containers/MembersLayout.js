@@ -12,7 +12,7 @@ export default class MembersLayout extends React.Component {
         state = {
             profiles: [],
             searchField: "",
-            interestFilter: " "
+            interestFilter: ""
         }
     componentDidMount() {
         fetch('http://localhost:4000/profiles', {
