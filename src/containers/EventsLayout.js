@@ -91,6 +91,7 @@ export default class EventsLayout extends Component {
                       handleRsvp={this.handleRsvp}
                       rsvp={this.state.rsvp}
                       user_id={this.state.user_id}
+                      key={event.id}
                     />
                   ))}
                 </Card.Group>
