@@ -35,7 +35,7 @@ export default class EventsLayout extends Component {
         
     }
 
-   handleRsvp = (event, user) => {
+   handleRsvp = (user, event) => {
       // console.log(event);
       // console.log(user);
       
@@ -92,6 +92,7 @@ export default class EventsLayout extends Component {
                       rsvp={this.state.rsvp}
                       user_id={this.state.user_id}
                       key={event.id}
+                      event_id={event.id}
                     />
                   ))}
                 </Card.Group>
