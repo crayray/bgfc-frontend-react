@@ -24,16 +24,22 @@ export default class EventsLayout extends Component {
           user_id: response.id
         })
         
-       
+    
       });
-       
-        // this.setState({
-        //     jwt: token
-        // }, () => console.log(this.state.jwt))
-
-
+   console.log(this.props.history);
+   
         
     }
+handleRefresh = event => {
+  this.setState(
+    {
+      rsvp: `${!this.state.rsvp}`
+    }
+  )
+  this.props.history.push("/events");
+
+}
+
 
   //  handleRsvp = (user, event) => {
   //     // console.log(event);
@@ -88,11 +94,12 @@ export default class EventsLayout extends Component {
                       token={this.state.jwt}
                       date={event.date}
                       time={event.time}
-                      // handleRsvp={this.handleRsvp}
+                      handleRefresh={this.handleRefresh}
                       rsvp={this.state.rsvp}
                       user_id={this.state.user_id}
                       key={event.id}
                       event_id={event.id}
+                      
                     />
                   ))}
                 </Card.Group>
