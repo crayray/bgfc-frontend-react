@@ -1,0 +1,40 @@
+body {
+      background-color: #eed1aa !important;
+}
+.text {
+    text-align: center;
+}
+.section{
+    margin-top: 5em !important;
+    background-color: #B2D1D9 !important;
+  
+}
+
+.form-container {
+    margin-top: 15px;
+}
+
+.segment-padding {
+    padding: 50px !important;
+    background-color: #ddebee !important;
+    
+}
+
+
+
+.input-margins {
+    margin-bottom: 40px !important;
+}
+
+.page-container {
+    /* position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-size: auto auto !important;
+    mix-blend-mode: overlay !important; */
+    /* background-color: #E2DEB4 !important; */
+  
+    
+  }
