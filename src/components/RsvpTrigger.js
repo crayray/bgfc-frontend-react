@@ -51,7 +51,21 @@ export default class RsvpTrigger extends React.Component {
 
 export class RsvpModal extends React.Component {
 
-  
+  state= {
+    rsvps: [],
+    event_id: ""
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:4000/rsvps")
+    .then(r => r.json())
+      .then(response => 
+        this.setState({
+          rsvps: response,
+          hasRsvpd: false
+        })
+      )
+  }
   
   render() {
     return (

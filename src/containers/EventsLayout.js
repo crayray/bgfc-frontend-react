@@ -54,10 +54,10 @@ export default class EventsLayout extends Component {
         })
       })
       .then(r => r.json())
-      .then(response => 
-        this.setState({
-          rsvp: `${!this.state.rsvp}`
-        })
+      .then(response => console.log(response)
+        // this.setState({
+        //   rsvp: `${!this.state.rsvp}`
+        // })
       )
     }
   render() {
