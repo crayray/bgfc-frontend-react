@@ -146,7 +146,7 @@ export default class CreateProfileForm extends Component {
                     value={this.state.name}
                     onChange={this.handleOnChange}
                     type="text"
-                    size="big"
+                    size="medium"
                     className="input-margins"
                   />
                   <Header as="h3">Share a short blurb about yourself</Header>
@@ -161,7 +161,7 @@ export default class CreateProfileForm extends Component {
                   />
                 </Segment>
                 <Segment className="section segment-padding">
-                  <Header as="h2" className="text">
+                  <Header as="h2" className="form-text">
                     {" "}
                     To help other members connect with you, please share your
                     social media details and select an interest.
@@ -171,7 +171,7 @@ export default class CreateProfileForm extends Component {
                     fluid
                     name="interest"
                     options={options}
-                    size="big"
+                    size="medium"
                     placeholder="Select an Interest"
                     onChange={(e, { value, text }) => {
                       this.setState({
@@ -188,7 +188,7 @@ export default class CreateProfileForm extends Component {
                     value={this.state.instagram}
                     onChange={this.handleOnChange}
                     type="text"
-                    size="big"
+                    size="medium"
                     className="input-margins"
                   />
                   <Header as='h3'>Twitter</Header>
@@ -200,7 +200,7 @@ export default class CreateProfileForm extends Component {
                     onChange={this.handleOnChange}
                     type="text"
                     
-                    size="big"
+                    size="medium"
                     className="input-margins"
                   />
                   <Header as='h3'>Facebook</Header>
@@ -212,7 +212,7 @@ export default class CreateProfileForm extends Component {
                     onChange={this.handleOnChange}
                     type="text"
                     // label="Facebook"
-                    size="big"
+                    size="medium"
                     className="input-margins"
                   />
                 </Segment>
@@ -224,7 +224,7 @@ export default class CreateProfileForm extends Component {
                       type="file"
                       name="avatar"
                       onChange={this.handleOnChange}
-                      size="big"
+                      size="medium"
                       className="input-margins"
                     />
                   </Form.Field>
