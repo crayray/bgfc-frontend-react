@@ -4,7 +4,8 @@ import {
   Grid,
   Segment,
   Container,
-  Header
+  Header,
+  Image
 } from "semantic-ui-react";
 import { DirectUpload } from "activestorage";
 import OopsProfile from "./OopsProfile";
@@ -132,8 +133,11 @@ export default class CreateProfileForm extends Component {
             
           >
             <Grid.Column style={{ maxWidth: 1000 }}>
+            {/* <Image size="small" src="http://localhost:3000/logos/bgfc-logo.svg" style={{borderRadius: "50%"}}/> */}
               <Form onSubmit={this.handleSubmit}>
                 <Segment className="segment-padding">
+                <Image className="border"  avatar size="small" src="http://localhost:3000/logos/bgfc-logo-neon.svg" style={{borderRadius: "50%"}}/>
+
                   <Header as="h3">Name</Header>
                   <Form.Input
                     icon="user circle olive"
