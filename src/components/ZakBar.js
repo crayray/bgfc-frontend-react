@@ -23,28 +23,28 @@ const getWidth = () => {
 
 class DesktopContainer extends Component {
   state = {
-    user_id: null
+    // user_id: null
   };
 
-  componentDidMount() {
-    let user_id = localStorage.getItem("user_id");
-    this.setState({
-      user_id: user_id
-    });
-  }
+  // componentDidMount() {
+  //   let user_id = localStorage.getItem("user_id");
+  //   this.setState({
+  //     user_id: user_id
+  //   });
+  // }
 
   hideFixedMenu = () => this.setState({ fixed: false });
   showFixedMenu = () => this.setState({ fixed: true });
 
   handleLogOut = () => {
     window.localStorage.clear();
-    this.setState({
-      user_id: null
-    });
+    // this.setState({
+    //   user_id: null
+    // });
     return <Redirect to="/" />;
   };
   render() {
-    const { children } = this.props;
+    const { children, user_id } = this.props;
     const { fixed } = this.state;
 
     return (
@@ -102,13 +102,16 @@ class DesktopContainer extends Component {
                 </NavLink>
               </Menu.Item>
               <Menu.Item>
-                {this.state.user_id === null ? (
-                  <NavLink to="/login">
-                    <Button> Login/Sign Up</Button>
-                  </NavLink>
-                ) : (
+              {/* Need to investigate why user_id isn't getting passed down properly */}
+              {console.log('user_id>>>', user_id)}
+                {this.props.user_id ? (
                   <NavLink to="/">
                     <Button onClick={this.handleLogOut}>Logout</Button>
+                  </NavLink>
+                ) : (
+                 
+                  <NavLink to="/login">
+                    <Button> Login/Sign Up</Button>
                   </NavLink>
                 )}
               </Menu.Item>

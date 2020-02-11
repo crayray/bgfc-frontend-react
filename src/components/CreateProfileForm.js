@@ -122,7 +122,8 @@ export default class CreateProfileForm extends Component {
   render() {
     if (this.state.profile === null) {
       return (
-        <div className="page-container bg" style={{ backgroundImage: 'url("http://localhost:3000/BGFC-Story4.png")'}}>
+        <div className="page-container" >
+        {/* style={{ backgroundImage: 'url("http://localhost:3000/BGFC-Story4.png")'}} */}
         <Container className="form-container">
           <Grid
             textAlign="center"
