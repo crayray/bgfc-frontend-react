@@ -50,6 +50,7 @@ export default class RsvpTrigger extends React.Component {
 }
 
 export class RsvpModal extends React.Component {
+  
   render() {
     return (
       
