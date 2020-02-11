@@ -53,21 +53,55 @@ export class RsvpModal extends React.Component {
 
   state= {
     rsvps: [],
-    event_id: ""
+    event_id: "",
+    user_id: this.props.user_id,
+    hasRsvpd: false
   }
 
   componentDidMount() {
     fetch("http://localhost:4000/rsvps")
     .then(r => r.json())
+      .then(response => response.includes(response.event_id && this.state.user_id))
       .then(response => 
         this.setState({
-          rsvps: response,
-          hasRsvpd: false
-        })
-      )
+          hasRsvpd: response
+        }))
+      //   this.setState({
+      //     rsvps: response,
+      //     hasRsvpd: false
+      //   })
+      // )
+  }
+
+  handleRsvp = (user, event) => {
+    // console.log(event);
+    // console.log(user);
+    
+    fetch("http://localhost:4000/rsvps", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        rsvp: {
+          user_id: `${user}`,
+          event_id: `${event}`
+          
+        }
+      })
+    })
+    .then(r => r.json())
+    .then(response => console.log(response)
+      // this.setState({
+      //   rsvp: `${!this.state.rsvp}`
+      // })
+    )
   }
   
   render() {
+
+    
     return (
       
       <Modal
