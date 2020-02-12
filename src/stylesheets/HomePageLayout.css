@@ -10,3 +10,32 @@
        url(https://media.giphy.com/media/jSVdPGu8S68gI45Y2P/giphy.gif) no-repeat center center fixed !important;
     /* background-size: cover !important; */
 }
+
+/* .homepage-header {
+    color: black !important;
+        font-size: 4em !important;
+        margin-top: 1.5em !important;
+
+} */
+
+.homepage-header{
+    font-size: 3em !important;
+    margin-top: 1.5em !important;
+    color: black !important;
+    text-align: center !important;
+    line-height: 1.3em !important;
+}
+
+.banner {
+    background-color: red !important;
+    margin-top: -160px !important;
+    margin-left: 25px !important;
+    min-width: 900px !important;
+    text-align: center !important;
+    padding-bottom: 75px !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    border: 20px solid black !important;
+
+   
+}

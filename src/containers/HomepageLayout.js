@@ -224,9 +224,27 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
-    <Segment style={{ padding: "8em 0em" }} vertical>
+  {/* style={{ padding: "8em 0em" }} */}
+    <Segment  vertical>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
+        <Container className="banner" text>
+    {/* <Header
+      as="h1"
+      inverted
+      className="homepage-header"
+      center
+    > 
+      Brown Girls Food Club
+    </Header> */}
+    <Header
+      as="p"
+      className="homepage-header"
+    >
+      Building a community of WOC by eating our way through minority owned
+      restaurants in Austin, TX
+    </Header>
+  </Container>
         <Box height="large" width="large"  pad="xlarge" overflow="hidden">
           <Carousel play={5000}>
             <Image  fit="cover" src="http://localhost:3000/who-are-you.jpg"  />
@@ -235,7 +253,7 @@ const HomepageLayout = () => (
           </Carousel>
         </Box>
         </Grid.Row>
-        <Grid.Row></Grid.Row>
+        
       </Grid>
     </Segment>
 
