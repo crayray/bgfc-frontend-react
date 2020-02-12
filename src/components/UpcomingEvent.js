@@ -3,7 +3,7 @@ import { Button, Card, Image } from "semantic-ui-react";
 import { defaultProps } from "grommet";
 import RsvpTrigger from "./RsvpTrigger"
 
-export default function UpcomingEvent({ image, date, time,location, blurb, token, event_id, handleRsvp, rsvp, user_id }) {
+export default function UpcomingEvent({ image, date, time,location, blurb, token, event_id, rsvp, user_id, handleRefresh }) {
   return (
     <Card
     raised
@@ -31,10 +31,11 @@ export default function UpcomingEvent({ image, date, time,location, blurb, token
             location={location}
             image={image}
             event_id={event_id}
-            handleRsvp={handleRsvp}
+            handleRefresh={handleRefresh}
             rsvp={rsvp}
             user_id={user_id}
-          
+            event_id={event_id}
+         
 
 
            />
