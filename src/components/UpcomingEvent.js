@@ -13,6 +13,8 @@ export default function UpcomingEvent({ image, date, time,location, blurb, token
         <Image
           floated="center"
           src={image}
+          size="medium"
+          rounded
         />
        
       </Card.Content>
