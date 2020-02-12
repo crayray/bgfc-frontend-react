@@ -243,7 +243,7 @@ const HomepageLayout = () => (
                     like to <strong>eat</strong>.{" "}
                   </h2>
                 </Container>
-                <Container centered textAlign="center">
+                <Container centered style={{marginTop: "25px", marginBottom:"100px"}}textAlign="center">
                   <p className="middle-section-text">
                     {" "}
                     Some of us are new to Austin and some have been here a
@@ -266,11 +266,14 @@ const HomepageLayout = () => (
         </Grid.Row>
       </Grid>
     </Segment>
-    <Segment>
-      <Grid>
-        <Grid.Row>
-          <Container centered textAlign="center">
-            <Header>Check out our upcoming events:</Header>
+    <Container className="events-section" >
+      <Grid >
+        <Grid.Row >
+        <Container className="events-section" ></Container>
+        {/* style={{marginTop: "100px", backgroundColor: "#D6C227"}} */}
+        {/* style={{backgroundColor: "#D6C227"}} */}
+          <Container   centered textAlign="center">
+            <Header >Check out our upcoming events:</Header>
           </Container>
         </Grid.Row>
         <Segment vertical>
@@ -297,11 +300,11 @@ const HomepageLayout = () => (
             <Grid.Row>
           <Container centered textAlign="center">
             <Header centered>Check out our past events:</Header>
-            <Grid.Row>
+            <Grid.Row style={{marginBottom: "100px"}}>
               <Container centered>
                 <Card.Group centered>
                   {PastEvents.map(event => (
-                    <HomeUpcomingEvent
+                    <HomeUpcomingEvent 
                       image={event.image}
                       location={event.location_name}
                       blurb={event.blurb}
@@ -321,7 +324,7 @@ const HomepageLayout = () => (
           </Grid>
         </Segment>
       </Grid>
-    </Segment>
+    </Container>
 
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
       <Container>
