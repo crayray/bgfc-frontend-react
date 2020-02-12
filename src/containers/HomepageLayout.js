@@ -45,9 +45,7 @@ const HomepageHeading = ({ mobile }) => (
         marginBottom: 0,
         marginTop: mobile ? "1.5em" : "3em"
       }}
-    >
-      {/* Brown Girls Food Club */}
-    </Header>
+    ></Header>
     <Header
       as="p"
       inverted
@@ -56,10 +54,7 @@ const HomepageHeading = ({ mobile }) => (
         fontWeight: "normal",
         marginTop: mobile ? "0.5em" : "1.5em"
       }}
-    >
-      {/* Building a community of WOC by eating our way through minority owned
-      restaurants in Austin, TX */}
-    </Header>
+    ></Header>
   </Container>
 );
 
@@ -166,7 +161,6 @@ class MobileContainer extends Component {
         <Sidebar.Pusher dimmed={sidebarOpened}>
           <Segment
             inverted
-           
             textAlign="center"
             style={{
               minHeight: 350,
@@ -174,12 +168,10 @@ class MobileContainer extends Component {
               backgroundColor: "#E19226",
               opacity: 0.75,
               backgroundImage: `url(${"http://localhost:3000/thank_you.png"})`,
-              backgroundSize: "cover",
-              
+              backgroundSize: "cover"
             }}
             className="thank-you"
             vertical
-            
           >
             <Container>
               <Menu
@@ -228,38 +220,39 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
-  {/* style={{ padding: "8em 0em" }} */}
-    <Segment className="middle-section"  vertical>
+    <Segment className="middle-section" vertical>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
-        <Container className="banner" text>
-    {/* <Header
-      as="h1"
-      inverted
-      className="homepage-header"
-      center
-    > 
-      Brown Girls Food Club
-    </Header> */}
-    <Header
-      as="p"
-      className="homepage-header"
-    >
-      Building a community of WOC by eating our way through minority owned
-      restaurants in Austin, TX
-    </Header>
-  </Container>
-  <div className="middle-section" >
-        <Box height="large" width="large"  pad="xlarge" overflow="hidden">
-          {/* <Carousel play={5000}>
+          <Container className="banner" text>
+            <Header as="p" className="homepage-header">
+              Building a community of WOC by eating our way through minority
+              owned restaurants in Austin, TX
+            </Header>
+          </Container>
+          <Grid.Row>
+        
+          <Container className="middle-section-text">
+            <Container style={{marginTop: "75px", minWidth: "1000px"}}text>
+              <p className="middle-section">
+                We're a group of badass brown girls (hence the name) based in
+                Austin and we like to eat. Some of us are new to Austin and some
+                have been here a while. {" "}
+              </p>
+              <p>We were searching for community and
+                found each other. We figured there were other ladies out there
+                hungry for connection, support, and good food, so we started
+                this community.</p>
+            </Container>
+            <Box height="large" width="large" pad="xlarge" overflow="hidden">
+              {/* <Carousel play={5000}>
             <Image  fit="cover" src="http://localhost:3000/who-are-you.jpg"  />
             <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
             <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
           </Carousel> */}
-        </Box>
-        </div>
+            </Box>
+          </Container>
+          </Grid.Row>
         </Grid.Row>
-        
       </Grid>
     </Segment>
 

@@ -1,6 +1,8 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 
+import { Image} from "semantic-ui-react";
+
 export default function AboutLayout() {
   return (
     <div>
@@ -12,6 +14,8 @@ export default function AboutLayout() {
       >
         <p>This is ABOUT</p>
       </div>
+
+      <Image src="http://localhost:3000/market.jpg" />
     </div>
   );
 }
