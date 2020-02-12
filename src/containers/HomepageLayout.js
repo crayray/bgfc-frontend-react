@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "../stylesheets/HomePageLayout.css";
-import NavBar from "../components/NavBar";
 // import { events } from "../data/events";
 import {upcoming} from "../data/UpcomingEvents"
 import {PastEvents} from "../data/PastEvents"
@@ -254,6 +253,10 @@ const HomepageLayout = () => (
                   </p>
                 </Container>
               </Container>
+              <Container>
+                <Icon name="instagram" link />
+                <Icon name="staylinked" link />
+              </Container>
               {/* <Box height="large" width="large" pad="xlarge" overflow="hidden"> */}
               {/* <Carousel play={5000}>
             <Image  fit="cover" src="http://localhost:3000/who-are-you.jpg"  />
@@ -273,7 +276,7 @@ const HomepageLayout = () => (
         {/* style={{marginTop: "100px", backgroundColor: "#D6C227"}} */}
         {/* style={{backgroundColor: "#D6C227"}} */}
           <Container   centered textAlign="center">
-            <Header >Check out our upcoming events:</Header>
+            <Header style={{marginBottom: "40px"}}>Check out our upcoming events:</Header>
           </Container>
         </Grid.Row>
         <Segment vertical>
@@ -298,9 +301,12 @@ const HomepageLayout = () => (
               </Container>
             </Grid.Row>
             <Grid.Row>
+          
           <Container centered textAlign="center">
-            <Header centered>Check out our past events:</Header>
+          <Divider />
+            <Header style={{marginBottom: "40px", marginTop: "20px"}} centered>Check out our past events:</Header>
             <Grid.Row style={{marginBottom: "100px"}}>
+            
               <Container centered>
                 <Card.Group centered>
                   {PastEvents.map(event => (

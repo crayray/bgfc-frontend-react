@@ -32,7 +32,7 @@
     padding-bottom: 50px !important;
     /* padding-right: 15px !important;
     padding-left: 15px !important; */
-    border: 10px solid #DCB228 !important;
+    border: 10px solid #B18CA0 !important;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 
 
@@ -62,7 +62,6 @@
 
 .middle-section-text{
     text-align: center !important;
-
     color: #b11f24 !important;
     line-height: 1.5em !important;
     font-size: 20px!important;
@@ -78,4 +77,12 @@
     background-color: #D6C227 !important;
     margin-top: 100px !important;
 
+}
+.event-card {
+    background-color: #B2D1D9 !important;
+    
+}
+
+.card-text {
+    color: #222220 !important;
 }
