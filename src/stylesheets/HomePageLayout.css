@@ -29,7 +29,7 @@
     margin-left: 25px !important;
     min-width: 900px !important;
     text-align: center !important;
-    padding-bottom: 75px !important;
+    padding-bottom: 50px !important;
     /* padding-right: 15px !important;
     padding-left: 15px !important; */
     border: 10px solid #DCB228 !important;
@@ -39,4 +39,9 @@
 
 .thank-you {
   max-width: 50px !important;
+}
+
+
+.middle-section {
+    background-color: #B2D1D9 !important;
 }

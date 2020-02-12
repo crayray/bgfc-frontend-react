@@ -67,10 +67,10 @@ class DesktopContainer extends Component {
             secondary={!fixed}
             size="massive"
             style={{
-              backgroundColor: "#222220",
-              opacity: 0.75,
+              backgroundColor: "#B11F24",
+              opacity: 0.95,
               marginBottom: 0,
-              paddingBottom: ".5em"
+              paddingBottom: ".5em",
             }}
           >
             <Container>

@@ -229,7 +229,7 @@ ResponsiveContainer.propTypes = {
 const HomepageLayout = () => (
   <ResponsiveContainer>
   {/* style={{ padding: "8em 0em" }} */}
-    <Segment  vertical>
+    <Segment className="middle-section"  vertical>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
         <Container className="banner" text>
@@ -249,13 +249,15 @@ const HomepageLayout = () => (
       restaurants in Austin, TX
     </Header>
   </Container>
+  <div className="middle-section" >
         <Box height="large" width="large"  pad="xlarge" overflow="hidden">
-          <Carousel play={5000}>
+          {/* <Carousel play={5000}>
             <Image  fit="cover" src="http://localhost:3000/who-are-you.jpg"  />
             <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
             <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
-          </Carousel>
+          </Carousel> */}
         </Box>
+        </div>
         </Grid.Row>
         
       </Grid>
