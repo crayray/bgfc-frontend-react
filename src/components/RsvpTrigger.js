@@ -77,9 +77,13 @@ export class RsvpModal extends React.Component {
       .then(r => r.json())
       .then(response =>
         this.setState({
-          userRsvp: response.rsvps
+          userRsvp: response.rsvps,
+          rsvp: this.state.rsvp
+
         })
       );
+
+      // this.state.rsvp === true ? this.setState({rsvp: false})
   }
 
   handleRsvp = (user, event) => {
@@ -102,6 +106,7 @@ export class RsvpModal extends React.Component {
         response => 
         this.setState({
           rsvp: `${!this.state.rsvp}`
+          // rsvpMsg: "You've RSVP'd"
         })
       
       )
@@ -136,9 +141,10 @@ export class RsvpModal extends React.Component {
                 <strong>Time:</strong> {this.props.time}
               </p>
               <p>
-                <strong>Location:</strong> {this.props.location}
+              <strong>Location:</strong> {this.props.location}
               </p>
               <p>Confirmation: You have RSVP'd: {this.state.rsvp}</p>
+              {this.state.rsvp === false ? null : <p>this.state.rsvpMsg</p> }
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
