@@ -1,3 +1,12 @@
 .homepage {
     background-color: "green" !important;
 }
+
+.animation{
+    background: /*linear-gradient(
+        rgba(255, 0, 0, 0.45),
+        rgba(255, 0, 0, 0.45)
+      ),  */
+       url(https://media.giphy.com/media/jSVdPGu8S68gI45Y2P/giphy.gif) no-repeat center center fixed !important;
+    /* background-size: cover !important; */
+}
