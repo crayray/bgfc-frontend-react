@@ -273,8 +273,8 @@ const HomepageLayout = () => (
             <Header>Check out our upcoming events:</Header>
           </Container>
         </Grid.Row>
-        <Segment style={{ padding: "8em 0em" }} vertical>
-          <Grid container stackable verticalAlign="middle">
+        <Segment vertical>
+          <Grid  >
             <Grid.Row>
               <Container centered>
                 <Card.Group centered>
@@ -296,7 +296,7 @@ const HomepageLayout = () => (
             </Grid.Row>
             <Grid.Row>
           <Container centered textAlign="center">
-            <Header>Check out our past events:</Header>
+            <Header centered>Check out our past events:</Header>
             <Grid.Row>
               <Container centered>
                 <Card.Group centered>
@@ -320,9 +320,6 @@ const HomepageLayout = () => (
         </Grid.Row>
           </Grid>
         </Segment>
-        {/* <Grid.Row>
-          <p> hello</p>
-        </Grid.Row> */}
       </Grid>
     </Segment>
 
