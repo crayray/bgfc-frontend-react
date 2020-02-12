@@ -92,13 +92,15 @@ class DesktopContainer extends Component {
             inverted
             textAlign="center"
             style={{
-              backgroundColor: "#E19226",
-              minHeight: 498,
-              backgroundImage: `url(${"http://localhost:3000/homepage.png"})`,
+              backgroundColor: "#E2DEB4",
+              maxHeight: 800,
+              // backgroundImage: `url(${"http://localhost:3000/homepage.png"})`,
               backgroundSize: "cover"
             }}
             vertical
+            
           >
+          <Image src="http://localhost:3000/homepage.png"/>
             <HomepageHeading />
           </Segment>
         </Visibility>
@@ -227,12 +229,14 @@ const HomepageLayout = () => (
     <Segment className="middle-section" vertical>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
-          <Container className="banner" text>
+          {/* <Container className="banner" text> */}
+          <div className="banner">
             <Header as="p" className="homepage-header">
               Building a community of WOC by eating our way through minority
               owned restaurants in Austin, TX
             </Header>
-          </Container>
+          {/* </Container> */}
+          </div>
           <Grid.Row>
             <Container>
               <Container style={{ marginTop: "55px", minWidth: "800px" }} text>
@@ -253,9 +257,9 @@ const HomepageLayout = () => (
                   </p>
                 </Container>
               </Container>
-              <Container>
-                <Icon name="instagram" link />
-                <Icon name="staylinked" link />
+              <Container style={{marginBottom: "100px"}}>
+                <Icon name="instagram" link size="big"/>
+                <Icon name="staylinked" link size="big"/>
               </Container>
               {/* <Box height="large" width="large" pad="xlarge" overflow="hidden"> */}
               {/* <Carousel play={5000}>
