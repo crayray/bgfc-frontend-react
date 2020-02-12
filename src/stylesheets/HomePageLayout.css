@@ -60,14 +60,14 @@
 
 .middle-section-text{
     text-align: center !important;
-    font-weight: 550 !important;
+
     color: #b11f24 !important;
     line-height: 1.5em !important;
-    font-size: 1.3em !important;
+    font-size: 20px!important;
     /* padding-top: 10px !important; */
     padding-left: 5px !important;
     /* margin-top: 75px !important; */
     min-width: 700px !important;
     padding-right: 5px !important;
-    
+
 }

@@ -231,14 +231,14 @@ const HomepageLayout = () => (
           </Container>
           <Grid.Row>
         
-          <Container className="middle-section-text">
-            <Container style={{marginTop: "75px", minWidth: "1000px"}}text>
-              <p className="middle-section">
-                We're a group of badass brown girls (hence the name) based in
-                Austin and we like to eat. Some of us are new to Austin and some
-                have been here a while. {" "}
-              </p>
-              <p>We were searching for community and
+          <Container >
+            <Container style={{marginTop: "55px", minWidth: "800px"}}text>
+              <h2 className="middle-section">
+                We're a group of badass brown girls based in
+                Austin and we like to <strong>eat</strong>.{" "}
+              </h2>
+              <p className="middle-section-text"> Some of us are new to Austin and some
+                have been here a while. We were searching for community and
                 found each other. We figured there were other ladies out there
                 hungry for connection, support, and good food, so we started
                 this community.</p>
