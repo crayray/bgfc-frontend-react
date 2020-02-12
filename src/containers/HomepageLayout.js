@@ -3,6 +3,10 @@ import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "../stylesheets/HomePageLayout.css";
 import NavBar from "../components/NavBar";
+// import { events } from "../data/events";
+import {upcoming} from "../data/UpcomingEvents"
+import {PastEvents} from "../data/PastEvents"
+import HomeUpcomingEvent from "../components/HomeUpcomingEvent"
 
 import {
   Button,
@@ -17,7 +21,8 @@ import {
   Responsive,
   Segment,
   Sidebar,
-  Visibility
+  Visibility,
+  Card
 } from "semantic-ui-react";
 import { Carousel, Box } from "grommet";
 
@@ -230,29 +235,94 @@ const HomepageLayout = () => (
             </Header>
           </Container>
           <Grid.Row>
-        
-          <Container >
-            <Container style={{marginTop: "55px", minWidth: "800px"}}text>
-              <h2 className="middle-section">
-                We're a group of badass brown girls based in
-                Austin and we like to <strong>eat</strong>.{" "}
-              </h2>
-              <p className="middle-section-text"> Some of us are new to Austin and some
-                have been here a while. We were searching for community and
-                found each other. We figured there were other ladies out there
-                hungry for connection, support, and good food, so we started
-                this community.</p>
-            </Container>
-            <Box height="large" width="large" pad="xlarge" overflow="hidden">
+            <Container>
+              <Container style={{ marginTop: "55px", minWidth: "800px" }} text>
+                <Container centered textAlign="center">
+                  <h2 className="middle-section">
+                    We're a group of badass brown girls based in Austin and we
+                    like to <strong>eat</strong>.{" "}
+                  </h2>
+                </Container>
+                <Container centered textAlign="center">
+                  <p className="middle-section-text">
+                    {" "}
+                    Some of us are new to Austin and some have been here a
+                    while. We were searching for community and found each other.
+                    We figured there were other ladies out there hungry for
+                    connection, support, and good food, so we started this
+                    community.
+                  </p>
+                </Container>
+              </Container>
+              {/* <Box height="large" width="large" pad="xlarge" overflow="hidden"> */}
               {/* <Carousel play={5000}>
             <Image  fit="cover" src="http://localhost:3000/who-are-you.jpg"  />
             <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
             <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
           </Carousel> */}
-            </Box>
-          </Container>
+              {/* </Box> */}
+            </Container>
           </Grid.Row>
         </Grid.Row>
+      </Grid>
+    </Segment>
+    <Segment>
+      <Grid>
+        <Grid.Row>
+          <Container centered textAlign="center">
+            <Header>Check out our upcoming events:</Header>
+          </Container>
+        </Grid.Row>
+        <Segment style={{ padding: "8em 0em" }} vertical>
+          <Grid container stackable verticalAlign="middle">
+            <Grid.Row>
+              <Container centered>
+                <Card.Group centered>
+                  {upcoming.map(event => (
+                    <HomeUpcomingEvent
+                      image={event.image}
+                      location={event.location_name}
+                      blurb={event.blurb}
+                      event_id={event.id}
+                      date={event.date}
+                      time={event.time}
+                      key={event.id}
+                    
+                      
+                    />
+                  ))}
+                </Card.Group>
+              </Container>
+            </Grid.Row>
+            <Grid.Row>
+          <Container centered textAlign="center">
+            <Header>Check out our past events:</Header>
+            <Grid.Row>
+              <Container centered>
+                <Card.Group centered>
+                  {PastEvents.map(event => (
+                    <HomeUpcomingEvent
+                      image={event.image}
+                      location={event.location_name}
+                      blurb={event.blurb}
+                      event_id={event.id}
+                      date={event.date}
+                      time={event.time}
+                      key={event.id}
+                    
+                      
+                    />
+                  ))}
+                </Card.Group>
+              </Container>
+            </Grid.Row>
+          </Container>
+        </Grid.Row>
+          </Grid>
+        </Segment>
+        {/* <Grid.Row>
+          <p> hello</p>
+        </Grid.Row> */}
       </Grid>
     </Segment>
 
