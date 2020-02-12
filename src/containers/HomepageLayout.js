@@ -241,12 +241,12 @@ const HomepageLayout = () => (
             <Container>
               <Container style={{ marginTop: "55px", minWidth: "800px" }} text>
                 <Container centered textAlign="center">
-                  <h2 className="middle-section">
+                  <p style={{fontSize: "40px"}}>
                     We're a group of badass brown girls based in Austin and we
                     like to <strong>eat</strong>.{" "}
-                  </h2>
+                  </p>
                 </Container>
-                <Container centered style={{marginTop: "25px", marginBottom:"100px"}}textAlign="center">
+                <Container centered style={{marginTop: "35px", marginBottom:"100px"}} textAlign="center">
                   <p className="middle-section-text">
                     {" "}
                     Some of us are new to Austin and some have been here a
