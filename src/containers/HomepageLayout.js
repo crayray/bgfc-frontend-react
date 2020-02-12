@@ -19,7 +19,7 @@ import {
   Sidebar,
   Visibility
 } from "semantic-ui-react";
-import { Carousel } from "grommet";
+import { Carousel, Box } from "grommet";
 
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
@@ -46,7 +46,7 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? "1.5em" : "3em"
       }}
     >
-      Brown Girls Food Club
+      {/* Brown Girls Food Club */}
     </Header>
     <Header
       as="p"
@@ -57,8 +57,8 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? "0.5em" : "1.5em"
       }}
     >
-      Building a community of WOC by eating our way through minority owned
-      restaurants in Austin, TX
+      {/* Building a community of WOC by eating our way through minority owned
+      restaurants in Austin, TX */}
     </Header>
   </Container>
 );
@@ -94,8 +94,8 @@ class DesktopContainer extends Component {
             textAlign="center"
             style={{
               backgroundColor: "#E19226",
-              minHeight: 700,
-              backgroundImage: `url(${"http://localhost:3000/thank_you.png"})`,
+              minHeight: 498,
+              backgroundImage: `url(${"http://localhost:3000/homepage.png"})`,
               backgroundSize: "cover"
             }}
             vertical
@@ -227,11 +227,13 @@ const HomepageLayout = () => (
     <Segment style={{ padding: "8em 0em" }} vertical>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
+        <Box height="large" width="large"  pad="xlarge" overflow="hidden">
           <Carousel play={5000}>
-            <Image src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg" />
+            <Image  fit="cover" src="http://localhost:3000/who-are-you.jpg"  />
             <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
             <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
           </Carousel>
+        </Box>
         </Grid.Row>
         <Grid.Row></Grid.Row>
       </Grid>
