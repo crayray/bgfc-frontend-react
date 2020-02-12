@@ -11,31 +11,32 @@
     /* background-size: cover !important; */
 }
 
-/* .homepage-header {
-    color: black !important;
-        font-size: 4em !important;
-        margin-top: 1.5em !important;
 
-} */
 
 .homepage-header{
-    font-size: 3em !important;
+    font-size: 2.5em !important;
     margin-top: 1.5em !important;
-    color: black !important;
+    color: #B2D1D9 !important;
     text-align: center !important;
     line-height: 1.3em !important;
+    padding: 20px !important;
 }
 
 .banner {
-    background-color: red !important;
-    margin-top: -160px !important;
+    background-color: #b11f24 !important;
+    opacity: .95 !important;
+    margin-top: -100px !important;
     margin-left: 25px !important;
     min-width: 900px !important;
     text-align: center !important;
     padding-bottom: 75px !important;
-    padding-right: 15px !important;
-    padding-left: 15px !important;
-    border: 20px solid black !important;
+    /* padding-right: 15px !important;
+    padding-left: 15px !important; */
+    border: 10px solid #DCB228 !important;
 
    
+}
+
+.thank-you {
+  max-width: 50px !important;
 }

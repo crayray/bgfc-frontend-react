@@ -166,6 +166,7 @@ class MobileContainer extends Component {
         <Sidebar.Pusher dimmed={sidebarOpened}>
           <Segment
             inverted
+           
             textAlign="center"
             style={{
               minHeight: 350,
@@ -173,9 +174,12 @@ class MobileContainer extends Component {
               backgroundColor: "#E19226",
               opacity: 0.75,
               backgroundImage: `url(${"http://localhost:3000/thank_you.png"})`,
-              backgroundSize: "cover"
+              backgroundSize: "cover",
+              
             }}
+            className="thank-you"
             vertical
+            
           >
             <Container>
               <Menu
