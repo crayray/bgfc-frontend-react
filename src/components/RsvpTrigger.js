@@ -57,7 +57,8 @@ export class RsvpModal extends React.Component {
     user_id: this.props.user_id,
     userRsvp: [],
     rsvp: false, 
-    disabled: ""
+    disabled: "",
+    rsvpMsg: ""
   };
 
   componentDidMount() {
@@ -102,14 +103,22 @@ export class RsvpModal extends React.Component {
       })
     })
       .then(r => r.json())
-      .then(
-        response => 
-        this.setState({
-          rsvp: `${!this.state.rsvp}`
-          // rsvpMsg: "You've RSVP'd"
-        })
+      .then(response => {
+        if(response.rsvps === 0){
+          this.setState({
+            userRsvp: response.rsvps
+          })
+        }
+      })
+
+      // .then(
+      //   response => 
+      //   this.setState({
+      //     rsvp: `${!this.state.rsvp}`,
+      //     rsvpMsg: "You've RSVP'd"
+      //   })
       
-      )
+      // )
       // .then(this.props.handleRefresh())
     
       // this.props.onClose()
@@ -117,6 +126,8 @@ export class RsvpModal extends React.Component {
   };
 
   render() {
+
+          const { time, date, location } = this.props;
 
     if(this.state.userRsvp.length === 0) {
       return (
@@ -135,16 +146,16 @@ export class RsvpModal extends React.Component {
             <Modal.Description>
               <Header>Event Details:</Header>
               <p>
-                <strong>Date:</strong> {this.props.date}
+                <strong>Date: {date} </strong> {this.props.date}
               </p>
               <p>
-                <strong>Time:</strong> {this.props.time}
+                <strong>Time:</strong> {time}
               </p>
               <p>
-              <strong>Location:</strong> {this.props.location}
+              <strong>Location:</strong> { location}
               </p>
-              <p>Confirmation: You have RSVP'd: {this.state.rsvp}</p>
-              {this.state.rsvp === false ? null : <p>this.state.rsvpMsg</p> }
+             
+              <p> {this.state.userRsvp.length !== 0 ? <p>You have  RSVP'd</p> :<p>You have not RSVP'd</p> }</p>
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
@@ -202,7 +213,7 @@ export class RsvpModal extends React.Component {
               <p>
                 <strong>Location:</strong> {this.props.location}
               </p>
-              <p>Confirmation: You have RSVP'd: {this.state.rsvp}</p>
+              <p> {this.state.userRsvp.length !== 0 ? <p>You have  RSVP'd</p> :<p>You have not RSVP'd</p> }</p>
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
