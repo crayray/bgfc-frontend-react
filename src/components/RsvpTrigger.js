@@ -149,7 +149,7 @@ export class RsvpModal extends React.Component {
             <Grid.Column>
       
               <p>
-                <strong>Date: {date} </strong> {this.props.date}
+                <strong>Date: {date} </strong> 
               </p>
               
               <p>
@@ -235,7 +235,7 @@ export class RsvpModal extends React.Component {
             <Grid.Row>
             <Grid.Column>
               <p>
-                <strong>Date: </strong> {this.props.date}
+                <strong>Date: </strong> {date}
               </p>
               <p>
                 <strong>Time:</strong> {this.props.time}
