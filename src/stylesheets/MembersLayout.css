@@ -1,3 +1,10 @@
 .members-container {
     padding-top: 50px;
 }
+
+.search-left {
+    text-align: center !important;
+    font-weight: 800 !important;
+    font-size: 23px;
+
+}

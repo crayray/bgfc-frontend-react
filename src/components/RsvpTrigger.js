@@ -131,7 +131,7 @@ export class RsvpModal extends React.Component {
         <Modal
           open={this.props.open}
           trigger={
-            <Button inverted color="olive" onClick={() => this.props.onOpen()}>
+            <Button  color="olive" onClick={() => this.props.onOpen()}>
               RSVP
             </Button>
           }

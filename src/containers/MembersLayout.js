@@ -1,6 +1,14 @@
 import React from "react";
 import NavBar from "../components/NavBar";
-import { Container, Segment, Grid, Header, Image } from "semantic-ui-react";
+import {
+  Container,
+  Segment,
+  Grid,
+  Header,
+  Image,
+  Divider,
+  Icon
+} from "semantic-ui-react";
 import { events } from "../data/events";
 import ProfileCardFront from "../components/ProfileCardFront";
 import CreateProfileForm from "../components/CreateProfileForm";
@@ -66,25 +74,52 @@ export default class MembersLayout extends React.Component {
             </Grid.Column>
           </Grid.Row>
 
-          <Grid.Row>
-            {/* style={{ maxWidth: 700 }} */}
-            <Grid.Column width={8}>
-              <Header textAlign="center" as="h4" >Looking for someone you met at one of our meetups?</Header>
-            </Grid.Column>
-            <Grid.Column width={8}>
-            <Image
+          {/* <Grid.Row> */}
+          <Segment placeholder>
+            <Grid.Row>
+              <Grid>
+                <Grid.Column width={8} relaxed="very" stackable>
+                  <Container>
+                    <Image
+                      centered
+                      size="mini"
+                      src="http://localhost:3000/logos/bgfc-logo-neon.svg"
+                      style={{ borderRadius: "50%" }}
+                    />
+
+                    <p className="search-left">
+                      Looking for someone you met at a BGFC meetup?
+                    </p>
+                  </Container>
+                  <Container style={{ textAlign: "center", marginTop: "50px" }}>
+                    <p>
+                      You can search for members by name or interest. Once you
+                      find your new friend, add them on social media!
+                    </p>
+                  </Container>
+                </Grid.Column>
+
+                <Grid.Column width={8} relaxed="very" stackable>
+                  {/* <Image
                 centered
                 size="tiny"
                 src="http://localhost:3000/logos/bgfc-logo-neon.svg"
                 style={{ borderRadius: "50%" }}
-              />
-              <SearchBar
-                onSearchChange={this.onSearchChange}
-                onDropdownChange={this.onDropdownChange}
-              />
-            </Grid.Column>
-          </Grid.Row>
+              /> */}
+                  <SearchBar
+                    onSearchChange={this.onSearchChange}
+                    onDropdownChange={this.onDropdownChange}
+                  />
+                </Grid.Column>
+              </Grid>
+              {/* </Grid.Row> */}
+              <Divider vertical>
+                <Icon name="search plus" />
+              </Divider>
+            </Grid.Row>
+          </Segment>
         </Grid>
+
         <Segment style={{ padding: "8em 0em" }} vertical>
           <Grid container>
             <Grid.Row>
