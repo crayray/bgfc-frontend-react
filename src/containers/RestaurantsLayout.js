@@ -94,7 +94,7 @@ export default class RestaurantsLayout extends React.Component {
       return restaurant.cuisine.toLowerCase().includes(this.state.searchField.toLowerCase());
    })
     return (
-      <div >
+      <div style={{backgroundColor: "#E2DEB4"}}>
       <Container style={{ paddingTop: "5em" }}>
     <Segment raised style={{ overflow: "auto"}}>
       <Grid stackable columns={2}>

@@ -1,3 +1,94 @@
 .homepage {
     background-color: "green" !important;
 }
+
+.animation{
+    background: /*linear-gradient(
+        rgba(255, 0, 0, 0.45),
+        rgba(255, 0, 0, 0.45)
+      ),  */
+       url(https://media.giphy.com/media/jSVdPGu8S68gI45Y2P/giphy.gif) no-repeat center center fixed !important;
+    /* background-size: cover !important; */
+}
+
+
+
+.homepage-header{
+    font-size: 2em !important;
+    margin-top: 1.5em !important;
+    margin-bottom: 1.2em !important;
+    color: #B2D1D9 !important;
+    text-align: center !important;
+    line-height: 1.3em !important;
+    padding: 20px !important;
+}
+
+.banner {
+    background-color: #b11f24 !important;
+    opacity: .95 !important;
+    margin-top: -160px !important; 
+    min-width: 900px !important;
+    text-align: center !important;
+    padding-bottom: 50px !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    border: 10px solid #B18CA0 !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+
+
+   
+}
+
+.thank-you {
+  max-width: 50px !important;
+}
+
+
+.middle-section {
+    background-color: #ddebee !important;
+    /* width: 400px !important; */
+    text-align: center !important;
+    font-weight: 550 !important;
+    color: #b11f24 !important;
+    line-height: 1.5em !important;
+    font-size: 28px !important;
+    /* padding-top: 10px !important; */
+    /* padding-right: 10px !important; */
+    /* margin-top: 75px !important; */
+    padding: 20px !important;
+    min-width: 800px !important;
+    /* padding-right: 5px !important; */
+}
+
+.middle-section-text{
+    text-align: center !important;
+    color: #b11f24 !important;
+    line-height: 1.5em !important;
+    font-size: 28px!important;
+    /* padding-top: 10px !important; */
+    padding-left: 5px !important;
+    /* margin-top: 75px !important; */
+    min-width: 700px !important;
+    padding-right: 5px !important;
+
+}
+
+.events-section {
+    background-color: #D6C227 !important;
+    margin-top: 100px !important;
+
+}
+.event-card {
+    background-color: #B2D1D9 !important;
+    
+}
+
+.card-text {
+    color: #222220 !important;
+}
+.cover-image{
+    width: 100%;
+    height: auto;
+    position: relative;
+
+}

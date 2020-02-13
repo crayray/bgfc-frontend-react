@@ -29,7 +29,7 @@ const SearchBar = ({onSearchChange, onDropdownChange}) => (
 
               onChange={onDropdownChange}
             />
-    <Button type='submit'>Search</Button>
+    <Button color="olive" type='submit'>Search</Button>
   </Form>
 )
 

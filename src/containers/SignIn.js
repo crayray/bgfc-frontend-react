@@ -64,6 +64,7 @@ export default function SignInSide(props) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  
   const handleLogin = event => {
     event.preventDefault();
     fetch("http://localhost:4000/login", {

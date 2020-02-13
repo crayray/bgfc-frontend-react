@@ -4,7 +4,7 @@ import ProfileCardFront from "../components/ProfileCardFront"
 
 export default function CardContainer({profiles}) {
     return (
-        <Segment style={{ padding: "8em 0em" }} vertical>
+        <Segment vertical>
         <Grid container stackable verticalAlign="middle">
           <Grid.Row>
             <Container centered>
