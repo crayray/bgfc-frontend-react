@@ -147,7 +147,7 @@ export class RsvpModal extends React.Component {
             <Grid>
             <Grid.Row>
             <Grid.Column>
-      
+            
               <p>
                 <strong>Date: {date} </strong> 
               </p>

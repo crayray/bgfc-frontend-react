@@ -77,9 +77,9 @@ class DesktopContainer extends Component {
 
 
             <Container>
-            <Menu.Item as='a' header>
-          <Image size='mini' src="http://localhost:3000/logos/bgfc-logo-main.svg" style={{ borderRadius: "50%"}} />
-        </Menu.Item>
+            {/* <Menu.Item as='a' header> */}
+          {/* <Image size='mini' src="http://localhost:3000/logos/bgfc-logo-main.svg" style={{ borderRadius: "50%"}} /> */}
+        {/* </Menu.Item> */}
               <Menu.Item as="a" active>
                 {" "}
                 <NavLink to="/">Home</NavLink>
