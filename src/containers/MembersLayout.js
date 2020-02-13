@@ -80,13 +80,6 @@ export default class MembersLayout extends React.Component {
               <Grid>
                 <Grid.Column width={8} relaxed="very" stackable>
                   <Container>
-                    <Image
-                      centered
-                      size="mini"
-                      src="http://localhost:3000/logos/bgfc-logo-neon.svg"
-                      style={{ borderRadius: "50%" }}
-                    />
-
                     <p className="search-left-header">
                       Looking for someone you met at a BGFC meetup?
                     </p>
@@ -100,12 +93,6 @@ export default class MembersLayout extends React.Component {
                 </Grid.Column>
 
                 <Grid.Column width={8} relaxed="very" stackable>
-                  {/* <Image
-                centered
-                size="tiny"
-                src="http://localhost:3000/logos/bgfc-logo-neon.svg"
-                style={{ borderRadius: "50%" }}
-              /> */}
                   <SearchBar
                     onSearchChange={this.onSearchChange}
                     onDropdownChange={this.onDropdownChange}
@@ -124,7 +111,9 @@ export default class MembersLayout extends React.Component {
           <Grid container>
             <Grid.Row>
               <Container centered textAlign="center">
-                <Header style={{marginTop: "40px", marginBottom: "10px"}}>Members</Header>
+                <Header style={{ marginTop: "40px", marginBottom: "10px" }}>
+                  Members
+                </Header>
               </Container>
             </Grid.Row>
           </Grid>
