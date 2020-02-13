@@ -3,6 +3,7 @@
 // Import React
 import * as React from "react";
 import { Image, Card, Segment, Grid } from "semantic-ui-react";
+import "../stylesheets/MapMarker.css"
 
 // Import necessary components for React Google Maps
 import {
@@ -39,10 +40,13 @@ const RestaurantsMapWithMarker = withScriptjs(
       }}
     >
       {props.restaurants.map((restaurant, index) => (
-        <Marker
+        <div className="marker"><Marker
+        className="marker"
           key={index}
           icon={{
-            url: "http://localhost:3000/Brown-Girls-Food-Club-Logo-01.svg"
+            url: 'http://localhost:3000/logos/bgfc_pindrops_purple.svg',
+            scaledSize: new window.google.maps.Size(60, 60)
+           
           }}
           position={{
             lat: restaurant.lat,
@@ -55,7 +59,7 @@ const RestaurantsMapWithMarker = withScriptjs(
               restaurant.lng
             )
           }
-        />
+        /></div>
       ))}
 
       {props.isInfoboxVisible && (

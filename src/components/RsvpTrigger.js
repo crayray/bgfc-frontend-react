@@ -147,7 +147,7 @@ export class RsvpModal extends React.Component {
             <Grid>
             <Grid.Row>
             <Grid.Column>
-      
+            
               <p>
                 <strong>Date: {date} </strong> 
               </p>
@@ -219,7 +219,7 @@ export class RsvpModal extends React.Component {
         <Modal
           open={this.props.open}
           trigger={
-            <Button inverted color="olive" onClick={() => this.props.onOpen()}>
+            <Button color="olive" onClick={() => this.props.onOpen()}>
               RSVP
             </Button>
           }
@@ -293,7 +293,7 @@ export class RsvpModal extends React.Component {
 const LoginModal = props => (
   <Modal
     trigger={
-      <Button inverted color="olive">
+      <Button  color="olive">
         RSVP
       </Button>
     }

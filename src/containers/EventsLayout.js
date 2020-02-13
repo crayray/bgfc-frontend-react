@@ -71,16 +71,16 @@ handleRefresh = event => {
     return (
       <div>
         {/* <NavBar /> */}
-        <Segment style={{ padding: "8em 0em" }} vertical>
+        <Segment style={{ paddingTop: "8em" }} vertical>
           <Grid container>
             <Grid.Row>
               <Container centered textAlign="center">
-                <Header>Upcoming Events</Header>
+                <Header as="h1" >Upcoming Events</Header>
               </Container>
             </Grid.Row>
           </Grid>
         </Segment>
-        <Segment style={{ padding: "8em 0em" }} vertical>
+        <Segment  vertical>
           <Grid container stackable verticalAlign="middle">
             <Grid.Row>
               <Container centered>
