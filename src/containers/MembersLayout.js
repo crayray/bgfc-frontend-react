@@ -87,12 +87,12 @@ export default class MembersLayout extends React.Component {
                       style={{ borderRadius: "50%" }}
                     />
 
-                    <p className="search-left">
+                    <p className="search-left-header">
                       Looking for someone you met at a BGFC meetup?
                     </p>
                   </Container>
-                  <Container style={{ textAlign: "center", marginTop: "50px" }}>
-                    <p>
+                  <Container style={{ textAlign: "center" }}>
+                    <p className="search-left-subheader">
                       You can search for members by name or interest. Once you
                       find your new friend, add them on social media!
                     </p>
@@ -120,11 +120,11 @@ export default class MembersLayout extends React.Component {
           </Segment>
         </Grid>
 
-        <Segment style={{ padding: "8em 0em" }} vertical>
+        <Segment vertical>
           <Grid container>
             <Grid.Row>
               <Container centered textAlign="center">
-                <Header>Members</Header>
+                <Header style={{marginTop: "40px", marginBottom: "10px"}}>Members</Header>
               </Container>
             </Grid.Row>
           </Grid>
