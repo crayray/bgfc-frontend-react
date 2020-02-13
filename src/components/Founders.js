@@ -12,11 +12,11 @@ import "../stylesheets/Founders.css";
 export default function Founders() {
   return (
     <div>
-      <Segment>
+      <Segment className="bio-segment-one">
         <Grid columns={2} divided>
           <Grid.Row>
             <Grid.Column>
-              <Header textAlign="center">Amber</Header>
+              <Header className="founder-name" textAlign="center">Amber</Header>
               <Grid columns={2}>
                 <Grid.Row>
                   <Grid.Column>
@@ -59,7 +59,7 @@ export default function Founders() {
               </Grid>
             </Grid.Column>
             <Grid.Column>
-              <Header textAlign="center">Ayesha</Header>
+              <Header className="founder-name" textAlign="center">Ayesha</Header>
               <Grid columns={2}>
                 <Grid.Row>
                   <Grid.Column>
@@ -109,11 +109,11 @@ export default function Founders() {
           </Grid.Row>
         </Grid>
       </Segment>
-      <Segment>
+      <Segment >
         <Grid columns={2} divided>
           <Grid.Row>
             <Grid.Column>
-              <Header textAlign="center">Hamaila</Header>
+              <Header className="founder-name"  textAlign="center">Hamaila</Header>
               <Grid columns={2}>
                 <Grid.Row>
                   <Grid.Column>
@@ -156,7 +156,7 @@ export default function Founders() {
               </Grid>
             </Grid.Column>
             <Grid.Column>
-              <Header textAlign="center">Hala</Header>
+              <Header className="founder-name" textAlign="center">Hala</Header>
               <Grid columns={2}>
                 <Grid.Row>
                   <Grid.Column>
