@@ -42,7 +42,8 @@ const RestaurantsMapWithMarker = withScriptjs(
         <Marker
           key={index}
           icon={{
-            url: "http://localhost:3000/Brown-Girls-Food-Club-Logo-01.svg"
+            url: "http://localhost:3000/logos/bgfc_pindrops_purple.svg"
+           
           }}
           position={{
             lat: restaurant.lat,
