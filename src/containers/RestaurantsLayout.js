@@ -104,7 +104,7 @@ export default class RestaurantsLayout extends React.Component {
             <RestaurantsMapWrapper restaurants={this.state.restaurants} handleSelect={this.handleMarkerSelect}/>
           </Grid.Column>
           <Grid.Column width={6}>
-          <Header>Search our list of restaurants by cuisine:</Header>
+          <Header style={{textAlign: "center", marginBottom:"10px"}}>Search our list of restaurants by cuisine:</Header>
           <RestaurantMenu onSearchChange={this.onSearchChange}/>
            {cuisineFilteredRestuarants.map((restaurant, index) => (
              <RestaurantCard 

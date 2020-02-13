@@ -16,7 +16,7 @@ export default class DataMenu extends Component {
         </Grid.Column>
           <Grid.Column width={1}>
           <Menu.Menu position='right' style={{textAlign: "right"}}>
-          <Menu.Item>
+          <Menu.Item style={{padding: "15px"}}>
             <Input onChange={this.props.onSearchChange} icon='search' placeholder='Search...' />
           </Menu.Item>
         </Menu.Menu>
