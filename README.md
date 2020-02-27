@@ -13,11 +13,16 @@ ScienceMaster
 ---
 
 ## General info
-If you're an NBA fan, you know it is hard to watch every game to see how your favorite players and teams are doing. We created a one-stop-shop where you can track your favorite players and teams. This web app has the following interactive functionalities: 
-- Find stats for specific teams or players
-- Save these teams or players so you can continue to reference them over time
-- Reference a five year analysis of each player's stats.
+[Brown Girls Food Club](https://www.instagram.com/browngirlsfoodclub/) is a newly formed group based in Austin which is building a community of women of color by hosting monthly meetups at minority owned restaurants around Austin. 
 
+As a new organization that is growing far more quickly than anticipated, I recognized the need for a central location for BGFC information, upcoming events, RSVPS and a space for members to connect.
+
+I approached the BGFC group founders with the suggestion and together we identified three important features of the app, with room to grow from there: 
+* An interactive page that shows all the restaurants we’ve visited and promotes those restaurants
+* An events page where members can RSVP to BGFC events
+* A directory where members can connect with others after events.
+
+Checkout a demo of the MVP of our app! We hope to launch a more polished version of this MVP soon, so stay tuned!
 
 ---
 
