@@ -95,7 +95,7 @@ class DesktopContainer extends Component {
               backgroundColor: "#E2DEB4",
               maxHeight: 800,
               // backgroundImage: `url(${"http://localhost:3000/homepage.png"})`,
-              backgroundSize: "cover"
+              // backgroundSize: "auto"
             }}
             vertical
             

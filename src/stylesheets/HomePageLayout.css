@@ -26,7 +26,7 @@
 .banner {
     background-color: #b11f24 !important;
     opacity: .95 !important;
-    margin-top: -160px !important; 
+    margin-top: -30px !important; 
     min-width: 900px !important;
     text-align: center !important;
     padding-bottom: 50px !important;
@@ -43,7 +43,9 @@
   max-width: 50px !important;
 }
 
-
+.background-image {
+    max-height: 400px;
+}
 .middle-section {
     background-color: #ddebee !important;
     /* width: 400px !important; */
