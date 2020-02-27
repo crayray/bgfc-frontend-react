@@ -55,4 +55,7 @@ The humble developer who built this app:
 
 **Rachel Fuerst** [LinkedIn](https://www.linkedin.com/in/rachfuerst) // [Github](https://github.com/crayray)
 
+The incredibly talented visual designer:
+**Ayesha Erkin** [Instagram](https://www.instagram.com/ayeshaerkin/)
+
 
