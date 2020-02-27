@@ -22,7 +22,10 @@ I approached the BGFC group founders with the suggestion and together we identif
 * An events page where members can RSVP to BGFC events
 * A directory where members can connect with others after events.
 
-Checkout a demo of the MVP of our app! We hope to launch a more polished version of this MVP soon, so stay tuned!
+Checkout a demo of the MVP of our app:
+- [Brown Girls Food Club Demo](https://www.youtube.com/watch?v=1odLoSq2L4M&feature=youtu.be)
+
+We hope to launch a more polished version of this MVP soon, so stay tuned!
 
 ---
 
