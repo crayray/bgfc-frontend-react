@@ -27,24 +27,22 @@ Checkout a demo of the MVP of our app! We hope to launch a more polished version
 ---
 
 ## Technologies
-The frontend of the app runs on React, with the backend API running on Rails and PostgreSQL. You can find details on our API [here](https://github.com/crayray/nba-stats-tracker-backend). 
+The frontend of the app runs on React, with the backend API running on Rails and PostgreSQL. You can find details on the API [here](https://github.com/crayray/bgfc-backend-rails). 
 
-All NBA stats data is pulled from the [API-NBA](https://rapidapi.com/api-sports/api/api-nba/details) API. 
-
-We are also using Semantic UI for the components. 
+The Restaurants feature is using Google Maps API with the React [react-google-maps](https://www.npmjs.com/package/react-google-maps) package. The site components are from Semantic UI. 
 
 
 ## Requirements
 This app will require the following:
 - React
-- Semantic UI package
+
 
 ## Installation
 Download the project files and run:
 ```
 // ♥ npm install
 ```
-Follow the Installation instructions from the [backend repository](https://github.com/crayray/nba-stats-tracker-backend) to ensure you can authenticate.
+Follow the Installation instructions from the [backend repository](https://github.com/crayray/bgfc-backend-rails) to ensure you can authenticate on the frontend. 
 
 ## Credits
 
